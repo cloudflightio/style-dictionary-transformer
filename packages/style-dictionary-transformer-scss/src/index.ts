@@ -21,21 +21,21 @@ StyleDictionary.registerTransformGroup(scssUsingCustomPropertiesTransformGroup);
 StyleDictionary.registerFilter(cloudflightFilter);
 
 export interface CloudflightPlatformConfig {
-    styleOutputDirectory: string;
+    styleDeclarationOutputDirectory: string;
+    styleImplOutputDirectory?: string;
 }
 
 export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig): Record<string, Platform> {
-    const styleOutputDirectory = config.styleOutputDirectory.endsWith('/')
-        ? config.styleOutputDirectory
-        : config.styleOutputDirectory + '/';
+    const declarationOutputDir = normalizeOutputDirectory(config.styleDeclarationOutputDirectory);
+    const implOutputDir = normalizeOutputDirectory(config.styleImplOutputDirectory ?? declarationOutputDir);
 
     return {
         css: {
             transformGroup: customPropertiesTransformGroup.name,
-            buildPath: styleOutputDirectory,
+            buildPath: implOutputDir,
             files: [
                 {
-                    destination: 'variables_impl.scss',
+                    destination: 'variables_impl.css',
                     format: 'css/variables',
                     filter: cloudflightFilter.name,
                 },
@@ -43,7 +43,7 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
         },
         scss: {
             transformGroup: scssUsingCustomPropertiesTransformGroup.name,
-            buildPath: styleOutputDirectory,
+            buildPath: declarationOutputDir,
             files: [
                 {
                     destination: 'variables.scss',
@@ -53,4 +53,8 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
             ],
         },
     };
+}
+
+function normalizeOutputDirectory(path: string): string {
+    return path.endsWith('/') ? path : path + '/';
 }

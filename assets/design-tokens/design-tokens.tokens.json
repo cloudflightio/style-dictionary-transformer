@@ -3,7 +3,7 @@
         "my-super-fancy-red": {
             "description": "",
             "type": "color",
-            "value": "#1b1e70ff",
+            "value": "#ff0000ff",
             "blendMode": "normal",
             "extensions": {
                 "org.lukasoppermann.figmaDesignTokens": {

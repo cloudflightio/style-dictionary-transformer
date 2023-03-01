@@ -24,8 +24,7 @@
     },
     "scripts": {
         "build-package": "tsc",
-        "test-package": "jest",
-        "generate": "ts-node src/index.ts"
+        "test-package": "jest"
     },
     "peerDependencies": {
         "style-dictionary": "^3.7.2"

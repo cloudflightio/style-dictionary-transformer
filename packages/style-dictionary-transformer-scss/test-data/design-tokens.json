@@ -1,0 +1,151 @@
+{
+    "color": {
+        "my-super-fancy-red": {
+            "description": "",
+            "type": "color",
+            "value": "#1b1e70ff",
+            "blendMode": "normal",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:b6f66f10a24f95eada3fed6c7ccb92e84787bb77,",
+                    "exportKey": "color"
+                }
+            }
+        },
+        "my-super-fancy-green": {
+            "description": "",
+            "type": "color",
+            "value": "#327a30ff",
+            "blendMode": "normal",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:924bc36ff78c98161a49fd853adfc5cab91be8e8,",
+                    "exportKey": "color"
+                }
+            }
+        }
+    },
+    "grid": {
+        "fancy-grid": {
+            "description": null,
+            "type": "custom-grid",
+            "value": {
+                "pattern": "grid",
+                "sectionSize": 10
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:704f31603d6cdbef6fb29451cce79dd4c8c49cfd,",
+                    "exportKey": "grid"
+                }
+            }
+        }
+    },
+    "font": {
+        "fancy-text": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 12,
+                "textDecoration": "underline",
+                "fontFamily": "JetBrains Mono",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 2.04,
+                "lineHeight": 40,
+                "paragraphIndent": 5,
+                "paragraphSpacing": 7,
+                "textCase": "capitalize"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:fefdee292a29d897eaf68d2f0c5150480382111a,",
+                    "exportKey": "font"
+                }
+            }
+        }
+    },
+    "effect": {
+        "fancy-effect": {
+            "0": null,
+            "1": null,
+            "2": {
+                "type": "custom-shadow",
+                "value": {
+                    "shadowType": "innerShadow",
+                    "radius": 6,
+                    "color": "#ce26264d",
+                    "offsetX": 0,
+                    "offsetY": 6,
+                    "spread": 0
+                }
+            },
+            "3": {
+                "type": "custom-shadow",
+                "value": {
+                    "shadowType": "dropShadow",
+                    "radius": 4,
+                    "color": "#00000040",
+                    "offsetX": 0,
+                    "offsetY": 4,
+                    "spread": 0
+                }
+            },
+            "description": null,
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:a6c01ffe9b547b3f4c27172cdaa172dbe4a73c83,",
+                    "exportKey": "effect"
+                }
+            }
+        }
+    },
+    "typography": {
+        "fancy-text": {
+            "fontSize": {
+                "type": "dimension",
+                "value": 12
+            },
+            "textDecoration": {
+                "type": "string",
+                "value": "underline"
+            },
+            "fontFamily": {
+                "type": "string",
+                "value": "JetBrains Mono"
+            },
+            "fontWeight": {
+                "type": "number",
+                "value": 400
+            },
+            "fontStyle": {
+                "type": "string",
+                "value": "normal"
+            },
+            "fontStretch": {
+                "type": "string",
+                "value": "normal"
+            },
+            "letterSpacing": {
+                "type": "dimension",
+                "value": 2.04
+            },
+            "lineHeight": {
+                "type": "dimension",
+                "value": 40
+            },
+            "paragraphIndent": {
+                "type": "dimension",
+                "value": 5
+            },
+            "paragraphSpacing": {
+                "type": "dimension",
+                "value": 7
+            },
+            "textCase": {
+                "type": "string",
+                "value": "capitalize"
+            }
+        }
+    }
+}

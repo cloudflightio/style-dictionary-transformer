@@ -1417,17 +1417,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflight/dictionary-transformer-scss@workspace:packages/style-dictionary-transformer-scss":
-  version: 0.0.0-use.local
-  resolution: "@cloudflight/dictionary-transformer-scss@workspace:packages/style-dictionary-transformer-scss"
-  dependencies:
-    ts-node: "npm:10.9.1"
-    typescript: "npm:4.9.5"
-  peerDependencies:
-    style-dictionary: ^3.7.2
-  languageName: unknown
-  linkType: soft
-
 "@cloudflight/eslint-plugin-typescript@npm:0.9.0":
   version: 0.9.0
   resolution: "@cloudflight/eslint-plugin-typescript@npm:0.9.0"
@@ -1441,6 +1430,41 @@ __metadata:
   checksum: 10a9f63f5f0e3fb5bcdd439bda337ce2ffa108f4b475e4a701c85b3a453ff1a46d83af254cdb1ddf7be16ef8c7afd231c705be583a91c68af6f7860adf1e9196
   languageName: node
   linkType: hard
+
+"@cloudflight/style-dictionary-transformer@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@cloudflight/style-dictionary-transformer@workspace:."
+  dependencies:
+    "@cloudflight/eslint-plugin-typescript": "npm:0.9.0"
+    "@jest/globals": "npm:29.4.3"
+    "@rushstack/eslint-patch": "npm:1.2.0"
+    "@storybook/addon-essentials": "npm:7.0.0-beta.57"
+    "@storybook/addon-interactions": "npm:7.0.0-beta.57"
+    "@storybook/addon-links": "npm:7.0.0-beta.57"
+    "@storybook/blocks": "npm:7.0.0-alpha.8"
+    "@storybook/testing-library": "npm:0.0.14-next.1"
+    "@storybook/vue3": "npm:7.0.0-beta.57"
+    "@storybook/vue3-vite": "npm:7.0.0-beta.57"
+    "@types/node": "npm:18.13.0"
+    eslint: "npm:8.33.0"
+    eslint-config-prettier: "npm:8.6.0"
+    eslint-plugin-storybook: "npm:0.6.11"
+    husky: "npm:8.0.3"
+    jest: "npm:29.4.2"
+    lint-staged: "npm:13.1.0"
+    prettier: "npm:2.8.3"
+    react: "npm:18.2.0"
+    react-dom: "npm:18.2.0"
+    sass: "npm:1.58.3"
+    storybook: "npm:7.0.0-beta.57"
+    style-dictionary: "npm:3.7.2"
+    ts-jest: "npm:29.0.5"
+    ts-node: "npm:10.9.1"
+    typescript: "npm:4.9.5"
+    vite: "npm:4.1.4"
+    vue: "npm:3.2.47"
+  languageName: unknown
+  linkType: soft
 
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
@@ -2081,6 +2105,13 @@ __metadata:
     mkdirp: "npm:^1.0.4"
     rimraf: "npm:^3.0.2"
   checksum: 3557a12cd18dfb5bcd5d5cf910b783832af50ffba28fd5bb510c3c56b2df0481558b9ec6d3008e8eeefb9f2944bdc1d34832b1a8bbf6ad1cd2f256bf12c84ff0
+  languageName: node
+  linkType: hard
+
+"@rushstack/eslint-patch@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@rushstack/eslint-patch@npm:1.2.0"
+  checksum: f91904a54e780bf2bb7644fb6d9bfcbf49ec92910c9aa3a3c7ba33f975e8c102a191d2bd18e49b41abdb13f5e5f6d54756299145e87ee073a93d111b9519ba1b
   languageName: node
   linkType: hard
 
@@ -5099,40 +5130,6 @@ __metadata:
   checksum: 4bd3def29e9bb5436c104c1f3ea6174839b4d193934762656f29e157d76f981953d484e358fc4ce26110bf24b0f12ccc2ade84ee5a3491220bb58ca72cf98de6
   languageName: node
   linkType: hard
-
-"cloudflight@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "cloudflight@workspace:."
-  dependencies:
-    "@cloudflight/eslint-plugin-typescript": "npm:0.9.0"
-    "@jest/globals": "npm:29.4.3"
-    "@storybook/addon-essentials": "npm:7.0.0-beta.57"
-    "@storybook/addon-interactions": "npm:7.0.0-beta.57"
-    "@storybook/addon-links": "npm:7.0.0-beta.57"
-    "@storybook/blocks": "npm:7.0.0-alpha.8"
-    "@storybook/testing-library": "npm:0.0.14-next.1"
-    "@storybook/vue3": "npm:7.0.0-beta.57"
-    "@storybook/vue3-vite": "npm:7.0.0-beta.57"
-    "@types/node": "npm:18.13.0"
-    eslint: "npm:8.33.0"
-    eslint-config-prettier: "npm:8.6.0"
-    eslint-plugin-storybook: "npm:0.6.11"
-    husky: "npm:8.0.3"
-    jest: "npm:29.4.2"
-    lint-staged: "npm:13.1.0"
-    prettier: "npm:2.8.3"
-    react: "npm:18.2.0"
-    react-dom: "npm:18.2.0"
-    sass: "npm:1.58.3"
-    storybook: "npm:7.0.0-beta.57"
-    style-dictionary: "npm:3.7.2"
-    ts-jest: "npm:29.0.5"
-    ts-node: "npm:10.9.1"
-    typescript: "npm:4.9.5"
-    vite: "npm:4.1.4"
-    vue: "npm:3.2.47"
-  languageName: unknown
-  linkType: soft
 
 "co@npm:^4.6.0":
   version: 4.6.0

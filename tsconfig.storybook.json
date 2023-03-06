@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist/storybook",
+        "module": "commonjs",
+        "types": ["node"],
+        "esModuleInterop": true
+    },
+    "include": ["stories/**/*.stories.ts", "stories/**/*.vue", "vite.config.ts"]
+}

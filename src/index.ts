@@ -1,5 +1,4 @@
 import StyleDictionary from 'style-dictionary';
-import { Platform } from 'style-dictionary/types/Platform';
 import { cloudflightFilter } from './filters';
 import { customPropertiesTransformGroup } from './transform-groups/custom-properties';
 import { scssUsingCustomPropertiesTransformGroup } from './transform-groups/scss-using-custom-properties';
@@ -27,7 +26,9 @@ export function registerItems(dictionary: StyleDictionary.Core): void {
     dictionary.registerFilter(cloudflightFilter);
 }
 
-export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig): Record<string, Platform> {
+export function cloudflightPlatformConfigWith(
+    config: CloudflightPlatformConfig,
+): Record<string, StyleDictionary.Platform> {
     const declarationOutputDir = normalizeOutputDirectory(config.styleDeclarationOutputDirectory);
     const implOutputDir = normalizeOutputDirectory(config.styleImplOutputDirectory ?? declarationOutputDir);
 
@@ -35,6 +36,9 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
         css: {
             transformGroup: customPropertiesTransformGroup.name,
             buildPath: implOutputDir,
+            options: {
+                showFileHeader: false,
+            },
             files: [
                 {
                     destination: 'variables_impl.css',
@@ -46,6 +50,9 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
         scss: {
             transformGroup: scssUsingCustomPropertiesTransformGroup.name,
             buildPath: declarationOutputDir,
+            options: {
+                showFileHeader: false,
+            },
             files: [
                 {
                     destination: 'variables.scss',

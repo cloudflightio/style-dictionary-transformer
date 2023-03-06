@@ -1,24 +1,26 @@
 {
-    "name": "cloudflight",
+    "name": "@cloudflight/style-dictionary-transformer",
     "version": "0.1.0",
-    "description": "Utilities for amazon style dictionary",
-    "main": "index.js",
+    "description": "Cloudflight style dictionary transformer for SCSS",
+    "main": "./dist/index.js",
     "author": "Cloudflight GmbH",
     "license": "Apache-2.0",
-    "private": true,
-    "workspaces": [
-        "packages/*"
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
     ],
     "volta": {
         "node": "18.14.2",
         "yarn": "4.0.0-rc.39"
     },
     "scripts": {
-        "build": "yarn workspaces foreach -t run build-package",
-        "lint": "eslint .",
-        "test": "yarn workspaces foreach run test-package",
+        "build": "tsc --project tsconfig.app.json",
+        "lint": "eslint . --ignore-path .gitignore",
+        "test": "jest",
         "postinstall": "husky install",
-        "publish-workspaces": "node ./scripts/prepare.js && yarn workspaces foreach --no-private npm publish",
+        "publish-workspaces": "npm publish",
         "generate-tokens": "ts-node scripts/transform-tokens.js",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
@@ -26,6 +28,7 @@
     "devDependencies": {
         "@cloudflight/eslint-plugin-typescript": "0.9.0",
         "@jest/globals": "29.4.3",
+        "@rushstack/eslint-patch": "1.2.0",
         "@storybook/addon-essentials": "7.0.0-beta.57",
         "@storybook/addon-interactions": "7.0.0-beta.57",
         "@storybook/addon-links": "7.0.0-beta.57",

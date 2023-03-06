@@ -8,4 +8,7 @@ module.exports = {
         project: ['tsconfig.*?.json'],
         ecmaVersion: 'latest',
     },
+    rules: {
+        '@cloudflight/typescript/package-force-absolute-version-dependencies': 'off',
+    },
 };

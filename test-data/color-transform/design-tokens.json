@@ -1,0 +1,28 @@
+{
+    "color": {
+        "my-super-fancy-red": {
+            "description": "",
+            "type": "color",
+            "value": "#ff0000ff",
+            "blendMode": "normal",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:b6f66f10a24f95eada3fed6c7ccb92e84787bb77,",
+                    "exportKey": "color"
+                }
+            }
+        },
+        "my-super-fancy-green": {
+            "description": "",
+            "type": "color",
+            "value": "#327a30ff",
+            "blendMode": "normal",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:924bc36ff78c98161a49fd853adfc5cab91be8e8,",
+                    "exportKey": "color"
+                }
+            }
+        }
+    }
+}

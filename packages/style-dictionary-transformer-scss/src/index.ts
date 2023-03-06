@@ -9,20 +9,22 @@ import { dropShadowTransform } from './transforms/drop-shadow';
 import { percentTransform } from './transforms/size-percent';
 import { pxTransform } from './transforms/size-px';
 
-StyleDictionary.registerTransform(pxTransform);
-StyleDictionary.registerTransform(percentTransform);
-StyleDictionary.registerTransform(fontStyleTransform);
-StyleDictionary.registerTransform(dropShadowTransform);
-StyleDictionary.registerTransform(asCustomPropertyTransform);
-
-StyleDictionary.registerTransformGroup(customPropertiesTransformGroup);
-StyleDictionary.registerTransformGroup(scssUsingCustomPropertiesTransformGroup);
-
-StyleDictionary.registerFilter(cloudflightFilter);
-
 export interface CloudflightPlatformConfig {
     styleDeclarationOutputDirectory: string;
     styleImplOutputDirectory?: string;
+}
+
+export function registerItems(dictionary: StyleDictionary.Core): void {
+    dictionary.registerTransform(pxTransform);
+    dictionary.registerTransform(percentTransform);
+    dictionary.registerTransform(fontStyleTransform);
+    dictionary.registerTransform(dropShadowTransform);
+    dictionary.registerTransform(asCustomPropertyTransform);
+
+    dictionary.registerTransformGroup(customPropertiesTransformGroup);
+    dictionary.registerTransformGroup(scssUsingCustomPropertiesTransformGroup);
+
+    dictionary.registerFilter(cloudflightFilter);
 }
 
 export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig): Record<string, Platform> {

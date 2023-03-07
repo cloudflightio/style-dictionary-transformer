@@ -1,0 +1,21 @@
+name: Build
+on:
+    push:
+        branches:
+            - 'main'
+    pull_request:
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: volta-cli/action@v4.0.0
+            - name: Install
+              run: yarn install --immutable --check-cache
+            - name: Build
+              run: yarn run build
+            - name: Lint
+              run: yarn run lint
+            - name: Test
+              run: yarn run test

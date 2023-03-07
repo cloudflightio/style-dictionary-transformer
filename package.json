@@ -20,7 +20,6 @@
         "lint": "eslint . --ignore-path .gitignore",
         "test": "jest",
         "postinstall": "husky install",
-        "publish-workspaces": "npm publish",
         "generate-tokens": "ts-node scripts/transform-tokens.js",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"

@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 7
+  version: 6
   cacheKey: 9
 
 "@ampproject/remapping@npm:^2.2.0":
@@ -1435,34 +1435,34 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/style-dictionary-transformer@workspace:."
   dependencies:
-    "@cloudflight/eslint-plugin-typescript": "npm:0.9.0"
-    "@jest/globals": "npm:29.4.3"
-    "@rushstack/eslint-patch": "npm:1.2.0"
-    "@storybook/addon-essentials": "npm:7.0.0-beta.57"
-    "@storybook/addon-interactions": "npm:7.0.0-beta.57"
-    "@storybook/addon-links": "npm:7.0.0-beta.57"
-    "@storybook/blocks": "npm:7.0.0-alpha.8"
-    "@storybook/testing-library": "npm:0.0.14-next.1"
-    "@storybook/vue3": "npm:7.0.0-beta.57"
-    "@storybook/vue3-vite": "npm:7.0.0-beta.57"
-    "@types/node": "npm:18.13.0"
-    eslint: "npm:8.33.0"
-    eslint-config-prettier: "npm:8.6.0"
-    eslint-plugin-storybook: "npm:0.6.11"
-    husky: "npm:8.0.3"
-    jest: "npm:29.4.2"
-    lint-staged: "npm:13.1.0"
-    prettier: "npm:2.8.3"
-    react: "npm:18.2.0"
-    react-dom: "npm:18.2.0"
-    sass: "npm:1.58.3"
-    storybook: "npm:7.0.0-beta.57"
-    style-dictionary: "npm:3.7.2"
-    ts-jest: "npm:29.0.5"
-    ts-node: "npm:10.9.1"
-    typescript: "npm:4.9.5"
-    vite: "npm:4.1.4"
-    vue: "npm:3.2.47"
+    "@cloudflight/eslint-plugin-typescript": 0.9.0
+    "@jest/globals": 29.4.3
+    "@rushstack/eslint-patch": 1.2.0
+    "@storybook/addon-essentials": 7.0.0-beta.57
+    "@storybook/addon-interactions": 7.0.0-beta.57
+    "@storybook/addon-links": 7.0.0-beta.57
+    "@storybook/blocks": 7.0.0-alpha.8
+    "@storybook/testing-library": 0.0.14-next.1
+    "@storybook/vue3": 7.0.0-beta.57
+    "@storybook/vue3-vite": 7.0.0-beta.57
+    "@types/node": 18.14.6
+    eslint: 8.33.0
+    eslint-config-prettier: 8.6.0
+    eslint-plugin-storybook: 0.6.11
+    husky: 8.0.3
+    jest: 29.4.2
+    lint-staged: 13.1.0
+    prettier: 2.8.3
+    react: 18.2.0
+    react-dom: 18.2.0
+    sass: 1.58.3
+    storybook: 7.0.0-beta.57
+    style-dictionary: 3.7.2
+    ts-jest: 29.0.5
+    ts-node: 10.9.1
+    typescript: 4.9.5
+    vite: 4.1.4
+    vue: 3.2.47
   languageName: unknown
   linkType: soft
 
@@ -3630,10 +3630,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.13.0":
-  version: 18.13.0
-  resolution: "@types/node@npm:18.13.0"
-  checksum: 591b7b9a97dbeaa155c3fe1a00e22fc13241781bda02f4e96935811723e7719fe18ed003301551cfa3273488cc7cf2f99146b752abc9b60aaab57bcbc67da830
+"@types/node@npm:18.14.6":
+  version: 18.14.6
+  resolution: "@types/node@npm:18.14.6"
+  checksum: 8/2f88f482cabadc6dbddd627a1674239e68c3c9beab56eb4ae2309fb96fd17fc3a509d99b0309bafe13b58529574f49ecf3a583f2ebe2896dd32fe4be436dc96e
   languageName: node
   linkType: hard
 
@@ -6757,9 +6757,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@npm%3A^2.3.2#optional!builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>":
+"fsevents@patch:fsevents@npm%3A^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -10586,16 +10586,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.6#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#optional!builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: a6f214b97d932445796f78dab7a898ec78966327e0d6cb571f90b6ac0f3b3347bf6bab0a071d899bfdc316b26ed845f6655310b38b8f6ee4da5272a0c5ecef85
+  checksum: 8/5656f4d0bedcf8eb52685c1abdf8fbe73a1603bb1160a24d716e27a57f6cecbe2432ff9c89c2bd57542c3a7b9d14b1882b73bfe2e9d7849c9a4c0b8b39f02b8b
   languageName: node
   linkType: hard
 
@@ -11800,13 +11800,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 09f82f25664c79d5cccc389502175093becf51d691b443c79294303681544a399fb42f8384b535ddeba48cadb64e7d14b42de40d8ade4418bb43174989dd8685
+  checksum: 8/2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
   languageName: node
   linkType: hard
 

@@ -5,6 +5,14 @@
     "main": "./dist/index.js",
     "author": "Cloudflight GmbH",
     "license": "Apache-2.0",
+    "keywords": [
+        "style-dictionary",
+        "transform"
+    ],
+    "homepage": "https://github.com/cloudflightio/style-dictionary-transformer",
+    "bugs": {
+        "url": "https://github.com/cloudflightio/style-dictionary-transformer/issues"
+    },
     "publishConfig": {
         "access": "public"
     },

@@ -11,7 +11,7 @@ export const customPropertiesTransformGroup: Named<TransformGroup> = {
         'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'color/hsl-4',
+        'color/hex',
         pxTransform.name,
         percentTransform.name,
         fontStyleTransform.name,

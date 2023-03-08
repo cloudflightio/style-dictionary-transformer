@@ -1,4 +1,4 @@
 :root {
-    --color-my-super-fancy-red: hsl(0 100% 50%);
-    --color-my-super-fancy-green: hsl(118 44% 33%);
+    --color-my-super-fancy-red: #ff0000;
+    --color-my-super-fancy-green: #327a30;
 }

@@ -1,5 +1,5 @@
-const StyleDictionary = require('style-dictionary');
-const { cloudflightPlatformConfigWith, registerItems } = require('@cloudflight/dictionary-transformer-scss');
+import { cloudflightPlatformConfigWith, registerItems } from '../dist/index.js';
+import StyleDictionary from 'style-dictionary';
 
 registerItems(StyleDictionary);
 

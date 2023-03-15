@@ -5,5 +5,5 @@
         "types": ["node"],
         "esModuleInterop": true
     },
-    "include": ["src/__tests__/*.spec.ts", "jest.config.ts"]
+    "include": ["src/__tests__/*.spec.ts", "src/test-util/*.ts", "jest.config.ts"]
 }

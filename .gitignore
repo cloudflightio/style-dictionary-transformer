@@ -238,3 +238,4 @@ dist
 .idea/
 stories/assets/styling
 test-data/*/actual
+storybook-static/

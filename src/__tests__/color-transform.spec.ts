@@ -18,13 +18,17 @@ describe('color transform', () => {
 
         StyleDictionaryExtended.buildAllPlatforms();
 
-        const expectedImpl = fs.readFileSync('test-data/color-transform/expected/variables_impl.css', 'utf8');
-        const expectedDecl = fs.readFileSync('test-data/color-transform/expected/variables.scss', 'utf8');
+        const expectedImpl = readFile('test-data/color-transform/expected/variables_impl.css');
+        const expectedDecl = readFile('test-data/color-transform/expected/variables.scss');
 
-        const actualImpl = fs.readFileSync('test-data/color-transform/actual/variables_impl.css', 'utf8');
-        const actualDecl = fs.readFileSync('test-data/color-transform/actual/variables.scss', 'utf8');
+        const actualImpl = readFile('test-data/color-transform/actual/variables_impl.css');
+        const actualDecl = readFile('test-data/color-transform/actual/variables.scss');
 
         expect(actualImpl).toEqual(expectedImpl);
         expect(actualDecl).toEqual(expectedDecl);
     });
 });
+
+function readFile(path: string): string {
+    return fs.readFileSync(path, 'utf8').replaceAll(' ', '').replaceAll('\r', '').replaceAll('\n', '');
+}

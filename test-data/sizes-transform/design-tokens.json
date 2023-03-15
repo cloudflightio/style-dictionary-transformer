@@ -1,0 +1,19 @@
+{
+    "sizes": {
+        "32": {
+            "description": null,
+            "value": 12.52,
+            "type": "dimension"
+        },
+        "80": {
+            "description": null,
+            "value": 80,
+            "type": "dimension"
+        },
+        "lorem ipsum": {
+            "description": null,
+            "value": 200,
+            "type": "dimension"
+        }
+    }
+}

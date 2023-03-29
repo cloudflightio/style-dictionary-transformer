@@ -1,5 +1,7 @@
 import StyleDictionary from 'style-dictionary';
 import { cloudflightFilter } from './filters';
+import { cloudflightCssImplFormat } from './formats/css-impl/css-impl-format';
+import { jsonParser } from './parsers/json';
 import { customPropertiesTransformGroup } from './transform-groups/custom-properties';
 import { scssUsingCustomPropertiesTransformGroup } from './transform-groups/scss-using-custom-properties';
 import { asCustomPropertyTransform } from './transforms/as-custom-property';
@@ -24,6 +26,10 @@ export function registerItems(dictionary: StyleDictionary.Core): void {
     dictionary.registerTransformGroup(scssUsingCustomPropertiesTransformGroup);
 
     dictionary.registerFilter(cloudflightFilter);
+
+    dictionary.registerFormat(cloudflightCssImplFormat);
+
+    dictionary.registerParser(jsonParser);
 }
 
 export function cloudflightPlatformConfigWith(
@@ -42,7 +48,7 @@ export function cloudflightPlatformConfigWith(
             files: [
                 {
                     destination: 'variables_impl.css',
-                    format: 'css/variables',
+                    format: cloudflightCssImplFormat.name,
                     filter: cloudflightFilter.name,
                 },
             ],

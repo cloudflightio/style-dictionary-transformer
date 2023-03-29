@@ -1,0 +1,36 @@
+{
+    "radius": {
+        "equal": {
+            "description": null,
+            "type": "custom-radius",
+            "value": {
+                "smoothing": 0,
+                "topLeft": 5,
+                "topRight": 5,
+                "bottomLeft": 5,
+                "bottomRight": 5
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "radius"
+                }
+            }
+        },
+        "mixed": {
+            "description": null,
+            "type": "custom-radius",
+            "value": {
+                "smoothing": 0,
+                "topLeft": 5.5,
+                "topRight": 10,
+                "bottomLeft": 20,
+                "bottomRight": 15
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "radius"
+                }
+            }
+        }
+    }
+}

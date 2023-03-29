@@ -1,0 +1,23 @@
+:root {
+    --radius-equal-top-left: 5px;
+    --radius-equal-top-right: 5px;
+    --radius-equal-bottom-left: 5px;
+    --radius-equal-bottom-right: 5px;
+    --radius-mixed-top-left: 5.5px;
+    --radius-mixed-top-right: 10px;
+    --radius-mixed-bottom-left: 20px;
+    --radius-mixed-bottom-right: 15px;
+}
+
+.radius-equal {
+    border-top-left-radius: var(--radius-equal-top-left);
+    border-top-right-radius: var(--radius-equal-top-right);
+    border-bottom-left-radius: var(--radius-equal-bottom-left);
+    border-bottom-right-radius: var(--radius-equal-bottom-right);
+}
+.radius-mixed {
+    border-top-left-radius: var(--radius-mixed-top-left);
+    border-top-right-radius: var(--radius-mixed-top-right);
+    border-bottom-left-radius: var(--radius-mixed-bottom-left);
+    border-bottom-right-radius: var(--radius-mixed-bottom-right);
+}

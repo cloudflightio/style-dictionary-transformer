@@ -4,7 +4,7 @@ import { cloudflightPlatformConfigWith, registerItems } from '../index';
 import { readFileMinified } from '../test-util/read-file-minified';
 
 describe('sizes transform', () => {
-    test('sizes colors when transforming then transforms properly', () => {
+    test('given sizes when transforming then transforms properly', () => {
         registerItems(StyleDictionary);
 
         const StyleDictionaryExtended = StyleDictionary.extend({

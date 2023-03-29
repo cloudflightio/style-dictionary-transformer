@@ -1,0 +1,36 @@
+{
+    "opacities": {
+        "0.25": {
+            "description": null,
+            "value": 0.25,
+            "type": "custom-opacity",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "opacity"
+                }
+            }
+        }
+    },
+    "opacity": {
+        "full": {
+            "description": null,
+            "value": 1,
+            "type": "custom-opacity",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "opacity"
+                }
+            }
+        },
+        "half": {
+            "description": null,
+            "value": 0.5,
+            "type": "custom-opacity",
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "opacity"
+                }
+            }
+        }
+    }
+}

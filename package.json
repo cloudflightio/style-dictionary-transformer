@@ -43,6 +43,7 @@
         "@storybook/vue3": "7.0.0-beta.57",
         "@storybook/vue3-vite": "7.0.0-beta.57",
         "@types/node": "18.13.0",
+        "@types/tinycolor2": "^1",
         "eslint": "8.33.0",
         "eslint-config-prettier": "8.6.0",
         "eslint-plugin-storybook": "0.6.11",
@@ -63,5 +64,8 @@
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
+    },
+    "dependencies": {
+        "tinycolor2": "1.6.0"
     }
 }

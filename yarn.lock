@@ -1446,6 +1446,7 @@ __metadata:
     "@storybook/vue3": "npm:7.0.0-beta.57"
     "@storybook/vue3-vite": "npm:7.0.0-beta.57"
     "@types/node": "npm:18.13.0"
+    "@types/tinycolor2": "npm:^1"
     eslint: "npm:8.33.0"
     eslint-config-prettier: "npm:8.6.0"
     eslint-plugin-storybook: "npm:0.6.11"
@@ -1458,6 +1459,7 @@ __metadata:
     sass: "npm:1.58.3"
     storybook: "npm:7.0.0-beta.57"
     style-dictionary: "npm:3.7.2"
+    tinycolor2: "npm:1.6.0"
     ts-jest: "npm:29.0.5"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
@@ -3741,6 +3743,13 @@ __metadata:
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: a961a1d043517a2b6f7fc326fbce12cd3ba4a8dfc87b63ef2aa7cd991f6a8c7bc87942a51a792c3f922e34e3898d9de3139f2f6636a326a7ec4635389b822bd9
+  languageName: node
+  linkType: hard
+
+"@types/tinycolor2@npm:^1":
+  version: 1.4.3
+  resolution: "@types/tinycolor2@npm:1.4.3"
+  checksum: e12074aa090e2cafb8b9578ccf1f41409c56861c972467a66bf9d277665517a2396816fa477b7b830bf07ab2a8f80c292f0006e91c9a1900ae115727c8d68589
   languageName: node
   linkType: hard
 
@@ -11524,7 +11533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinycolor2@npm:^1.4.1":
+"tinycolor2@npm:1.6.0, tinycolor2@npm:^1.4.1":
   version: 1.6.0
   resolution: "tinycolor2@npm:1.6.0"
   checksum: 6f44e01b8afc10862dc84aebbe38ce850c9137974901e2dc4f9514ac150ba2e679202ca8fee3d1124b0ed5068f96833700edd25bab62d3fc00d385a7b5e82336

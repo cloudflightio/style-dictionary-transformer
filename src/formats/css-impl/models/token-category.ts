@@ -3,6 +3,7 @@ import { TransformedToken } from 'style-dictionary';
 export interface CategorizedTokens {
     radius: Map<string, Partial<RadiusTokenGroup>>;
     border: Map<string, Partial<BorderTokenGroup>>;
+    spacing: Map<string, Partial<SpacingTokenGroup>>;
 }
 
 export interface RadiusTokenGroup {
@@ -17,7 +18,14 @@ export interface BorderTokenGroup {
     color: TransformedToken;
 }
 
-export type TokenCategory = RadiusCategory | BorderCategory | OtherCategory;
+export interface SpacingTokenGroup {
+    top: TransformedToken;
+    right: TransformedToken;
+    left: TransformedToken;
+    bottom: TransformedToken;
+}
+
+export type TokenCategory = RadiusCategory | BorderCategory | SpacingCategory | OtherCategory;
 
 export interface RadiusCategory {
     type: 'radius-category';
@@ -29,6 +37,12 @@ export interface BorderCategory {
     type: 'border-category';
     groupName: string;
     property: keyof BorderTokenGroup;
+}
+
+export interface SpacingCategory {
+    type: 'spacing-category';
+    groupName: string;
+    property: keyof SpacingTokenGroup;
 }
 
 export interface OtherCategory {

@@ -1,0 +1,21 @@
+:root {
+    --borders-single-width: 5px;
+    --borders-single-color: #000000;
+    --borders-dashed-outside-width: 5px;
+    --borders-dashed-outside-color: #000000;
+    --borders-single-style-width: 5px;
+    --borders-single-style-color: #044aff;
+}
+
+.borders-single {
+    border-width: var(--borders-single-width);
+    border-color: var(--borders-single-color);
+}
+.borders-dashed-outside {
+    border-width: var(--borders-dashed-outside-width);
+    border-color: var(--borders-dashed-outside-color);
+}
+.borders-single-style {
+    border-width: var(--borders-single-style-width);
+    border-color: var(--borders-single-style-color);
+}

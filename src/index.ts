@@ -5,6 +5,7 @@ import { jsonParser } from './parsers/json';
 import { customPropertiesTransformGroup } from './transform-groups/custom-properties';
 import { scssUsingCustomPropertiesTransformGroup } from './transform-groups/scss-using-custom-properties';
 import { asCustomPropertyTransform } from './transforms/as-custom-property';
+import { colorTransform } from './transforms/color-hex';
 import { fontStyleTransform } from './transforms/font-style';
 import { dropShadowTransform } from './transforms/drop-shadow';
 import { percentTransform } from './transforms/size-percent';
@@ -16,6 +17,7 @@ export interface CloudflightPlatformConfig {
 }
 
 export function registerItems(dictionary: StyleDictionary.Core): void {
+    dictionary.registerTransform(colorTransform);
     dictionary.registerTransform(pxTransform);
     dictionary.registerTransform(percentTransform);
     dictionary.registerTransform(fontStyleTransform);

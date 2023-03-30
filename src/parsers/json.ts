@@ -1,8 +1,10 @@
 import { DesignTokens, Parser } from 'style-dictionary';
+import { BorderProperty, flattenBorder } from './util/border';
 import { flattenRadius, RadiusProperty } from './util/radius';
 
 interface Structure extends DesignTokens {
     radius?: Record<string, RadiusProperty>;
+    borders?: Record<string, BorderProperty>;
 }
 
 export const jsonParser: Parser = {
@@ -10,13 +12,16 @@ export const jsonParser: Parser = {
     parse({ contents }) {
         const parsedContent: Structure = JSON.parse(contents);
 
+        const result: DesignTokens = { ...parsedContent };
+
         if (parsedContent.radius != null) {
-            return {
-                ...parsedContent,
-                radius: flattenRadius(parsedContent.radius),
-            };
+            result['radius'] = flattenRadius(parsedContent.radius);
         }
 
-        return parsedContent;
+        if (parsedContent.borders != null) {
+            result['borders'] = flattenBorder(parsedContent.borders);
+        }
+
+        return result;
     },
 };

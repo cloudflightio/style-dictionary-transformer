@@ -1,4 +1,5 @@
 import { Named, TransformGroup } from 'style-dictionary';
+import { colorTransform } from '../transforms/color-hex';
 import { fontStyleTransform } from '../transforms/font-style';
 import { dropShadowTransform } from '../transforms/drop-shadow';
 import { percentTransform } from '../transforms/size-percent';
@@ -11,7 +12,7 @@ export const customPropertiesTransformGroup: Named<TransformGroup> = {
         'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'color/hex',
+        colorTransform.name,
         pxTransform.name,
         percentTransform.name,
         fontStyleTransform.name,

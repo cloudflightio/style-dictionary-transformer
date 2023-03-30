@@ -1,0 +1,58 @@
+{
+    "borders": {
+        "single": {
+            "description": null,
+            "type": "custom-stroke",
+            "value": {
+                "align": "inside",
+                "dashPattern": [0, 0],
+                "lineCap": "none",
+                "lineJoin": "miter",
+                "miterLimit": 4,
+                "weight": 5,
+                "color": "#000000ff"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "border"
+                }
+            }
+        },
+        "dashed outside": {
+            "description": null,
+            "type": "custom-stroke",
+            "value": {
+                "align": "outside",
+                "dashPattern": [5, 5, 3, 3],
+                "lineCap": "none",
+                "lineJoin": "miter",
+                "miterLimit": 4,
+                "weight": 5,
+                "color": "#000000ff"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "border"
+                }
+            }
+        },
+        "single (style)": {
+            "description": null,
+            "type": "custom-stroke",
+            "value": {
+                "align": "inside",
+                "dashPattern": [0, 0],
+                "lineCap": "none",
+                "lineJoin": "miter",
+                "miterLimit": 4,
+                "weight": 5,
+                "color": "#044affff"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "border"
+                }
+            }
+        }
+    }
+}

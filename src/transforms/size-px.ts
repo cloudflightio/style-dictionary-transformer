@@ -1,4 +1,5 @@
 import { Named, Transform } from 'style-dictionary';
+import { borderWidthType } from '../models/border';
 import { radiusType } from '../models/radius';
 
 export const pxTransform: Named<Transform> = {
@@ -6,7 +7,10 @@ export const pxTransform: Named<Transform> = {
     type: 'value',
     matcher: (token) => {
         return (
-            (token['unit'] === 'pixel' || token['type'] === 'dimension' || token['type'] === radiusType) &&
+            (token['unit'] === 'pixel' ||
+                token['type'] === 'dimension' ||
+                token['type'] === radiusType ||
+                token['type'] === borderWidthType) &&
             token.value !== 0
         );
     },

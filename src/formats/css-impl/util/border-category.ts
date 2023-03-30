@@ -1,11 +1,12 @@
+import { borderTokenEndings } from '../../../models/border';
 import { BorderCategory } from '../models/token-category';
-
-const endings = ['-width', '-color'] as const;
 
 export function borderCategoryOf(name: string): BorderCategory | undefined {
     const property = borderPropertyOf(name);
 
-    const endIndex = endings.map((ending) => name.indexOf(ending)).find((index) => index !== -1);
+    const endIndex = Object.values(borderTokenEndings)
+        .map((ending) => name.indexOf(ending))
+        .find((index) => index !== -1);
 
     if (property == null || endIndex == null) {
         return undefined;
@@ -19,7 +20,7 @@ export function borderCategoryOf(name: string): BorderCategory | undefined {
 }
 
 function borderPropertyOf(name: string): BorderCategory['property'] | undefined {
-    const foundEnding = endings.find((ending) => name.includes(ending));
+    const foundEnding = Object.values(borderTokenEndings).find((ending) => name.includes(ending));
 
     switch (foundEnding) {
         case '-width':

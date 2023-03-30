@@ -3,26 +3,18 @@ import { borderColorType, borderWidthType } from '../../models/border';
 import { radiusType } from '../../models/radius';
 import { CategorizedTokens, TokenCategory } from './models/token-category';
 import { borderCategoryOf } from './util/border-category';
-import { borderClassFrom } from './util/border-serialize-class';
-import { classesFrom } from './util/classes';
+import { borderClassesFrom } from './util/border-serialize-class';
+import { customPropertySectionFrom } from './util/custom-properties-serialize';
 import { radiusCategoryOf } from './util/radius-category';
-import { radiusClassFrom } from './util/radius-serialize-class';
+import { radiusClassesFrom } from './util/radius-serialize-class';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
     formatter({ dictionary }) {
-        const customProperties = dictionary.allTokens.map((token) => `--${token.name}: ${token.value};`);
-        const formattedCustomProperties = customProperties.map((property) => `    ${property}\n`);
-
-        const customPropertiesSection = `:root {\n${formattedCustomProperties.join('')}}`;
-
+        const customPropertiesSection = customPropertySectionFrom(dictionary.allTokens);
         const category = categoryFrom(dictionary);
 
-        return [
-            customPropertiesSection,
-            classesFrom(category.radius, radiusClassFrom),
-            classesFrom(category.border, borderClassFrom),
-        ]
+        return [customPropertiesSection, radiusClassesFrom(category.radius), borderClassesFrom(category.border)]
             .filter((item) => item !== '')
             .join('\n\n');
     },

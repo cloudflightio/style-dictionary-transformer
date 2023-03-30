@@ -1,11 +1,12 @@
+import { radiusTokenEndings } from '../../../models/radius';
 import { RadiusCategory } from '../models/token-category';
-
-const endings = ['-top-left', '-top-right', '-bottom-left', '-bottom-right'] as const;
 
 export function radiusCategoryOf(name: string): RadiusCategory | undefined {
     const property = radiusPropertyOf(name);
 
-    const endIndex = endings.map((ending) => name.indexOf(ending)).find((index) => index !== -1);
+    const endIndex = Object.values(radiusTokenEndings)
+        .map((ending) => name.indexOf(ending))
+        .find((index) => index !== -1);
 
     if (property == null || endIndex == null) {
         return undefined;
@@ -19,7 +20,7 @@ export function radiusCategoryOf(name: string): RadiusCategory | undefined {
 }
 
 function radiusPropertyOf(name: string): RadiusCategory['property'] | undefined {
-    const foundEnding = endings.find((ending) => name.includes(ending));
+    const foundEnding = Object.values(radiusTokenEndings).find((ending) => name.includes(ending));
 
     switch (foundEnding) {
         case '-top-left':

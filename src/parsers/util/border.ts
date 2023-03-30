@@ -1,11 +1,11 @@
 import { DesignToken } from 'style-dictionary';
-import { borderColorType, borderWidthType } from '../../models/border';
+import { borderColorType, borderTokenEndings, borderWidthType } from '../../models/border';
 
 export interface BorderProperty {
     description?: string;
     type: 'custom-stroke';
     value: {
-        align: 'inside' | 'center' | 'outised';
+        align: 'inside' | 'center' | 'outside';
         dashPattern: number[];
         lineCap: string;
         lineJoin: string;
@@ -18,8 +18,8 @@ export interface BorderProperty {
 export function flattenBorder(properties: Record<string, BorderProperty>): Record<string, DesignToken> {
     return Object.entries(properties)
         .flatMap(([key, value]) => [
-            { key: `${key}-width`, value: widthFrom(value.value.weight) },
-            { key: `${key}-color`, value: colorFrom(value.value.color) },
+            { key: key + borderTokenEndings.width, value: widthFrom(value.value.weight) },
+            { key: key + borderTokenEndings.color, value: colorFrom(value.value.color) },
         ])
         .reduce<Record<string, DesignToken>>((acc, entry) => {
             acc[entry.key] = entry.value;

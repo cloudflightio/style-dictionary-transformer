@@ -5,7 +5,7 @@ export interface BorderProperty {
     description?: string;
     type: 'custom-stroke';
     value: {
-        align: 'inside' | 'center' | 'outised';
+        align: 'inside' | 'center' | 'outside';
         dashPattern: number[];
         lineCap: string;
         lineJoin: string;

@@ -19,7 +19,7 @@ export function radiusCategoryOf(name: string): RadiusCategory | undefined {
 }
 
 function radiusPropertyOf(name: string): RadiusCategory['property'] | undefined {
-    const foundEnding = endings.find((ending) => name.indexOf(ending) !== -1);
+    const foundEnding = endings.find((ending) => name.includes(ending));
 
     switch (foundEnding) {
         case '-top-left':

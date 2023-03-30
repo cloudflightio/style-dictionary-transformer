@@ -1417,9 +1417,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflight/eslint-plugin-typescript@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@cloudflight/eslint-plugin-typescript@npm:0.9.0"
+"@cloudflight/eslint-plugin-typescript@npm:0.12.0":
+  version: 0.12.0
+  resolution: "@cloudflight/eslint-plugin-typescript@npm:0.12.0"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^5.45.0"
     "@typescript-eslint/parser": "npm:^5.45.0"
@@ -1427,7 +1427,7 @@ __metadata:
     eslint-plugin-json-es: "npm:^1.5.7"
   peerDependencies:
     eslint: ">=8.0.0 <9.0.0"
-  checksum: 10a9f63f5f0e3fb5bcdd439bda337ce2ffa108f4b475e4a701c85b3a453ff1a46d83af254cdb1ddf7be16ef8c7afd231c705be583a91c68af6f7860adf1e9196
+  checksum: e1e66c83b4f521c441420c767bd2ec937d6cbf8abe18d6335adff32c01b3809667cd86b85e91ac16c3d6cc849ba3390e1142f92d4fee4977c8d6726400fb2b0d
   languageName: node
   linkType: hard
 
@@ -1435,7 +1435,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/style-dictionary-transformer@workspace:."
   dependencies:
-    "@cloudflight/eslint-plugin-typescript": "npm:0.9.0"
+    "@cloudflight/eslint-plugin-typescript": "npm:0.12.0"
     "@jest/globals": "npm:29.4.3"
     "@rushstack/eslint-patch": "npm:1.2.0"
     "@storybook/addon-essentials": "npm:7.0.0-beta.57"

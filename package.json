@@ -32,7 +32,7 @@
         "build-storybook": "storybook build"
     },
     "devDependencies": {
-        "@cloudflight/eslint-plugin-typescript": "0.9.0",
+        "@cloudflight/eslint-plugin-typescript": "0.12.0",
         "@jest/globals": "29.4.3",
         "@rushstack/eslint-patch": "1.2.0",
         "@storybook/addon-essentials": "7.0.0-beta.57",

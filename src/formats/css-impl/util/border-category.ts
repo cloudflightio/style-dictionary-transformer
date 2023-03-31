@@ -1,4 +1,4 @@
-import { borderTokenEndings } from '../../../models/border';
+import { borderTokenEndings } from '../../../models/token-endings';
 import { BorderCategory } from '../models/token-category';
 
 export function borderCategoryOf(name: string): BorderCategory | undefined {
@@ -13,7 +13,7 @@ export function borderCategoryOf(name: string): BorderCategory | undefined {
     }
 
     return {
-        type: 'border-category',
+        type: 'border',
         groupName: name.slice(0, endIndex),
         property,
     };

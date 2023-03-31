@@ -1,4 +1,4 @@
-import { radiusTokenEndings } from '../../../models/radius';
+import { radiusTokenEndings } from '../../../models/token-endings';
 import { RadiusCategory } from '../models/token-category';
 
 export function radiusCategoryOf(name: string): RadiusCategory | undefined {
@@ -13,7 +13,7 @@ export function radiusCategoryOf(name: string): RadiusCategory | undefined {
     }
 
     return {
-        type: 'radius-category',
+        type: 'radius',
         groupName: name.slice(0, endIndex),
         property,
     };

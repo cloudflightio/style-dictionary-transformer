@@ -1,5 +1,8 @@
 import { TransformedToken } from 'style-dictionary';
 
+type TokenGroupType<T extends keyof CategorizedTokens> = NonNullable<ReturnType<CategorizedTokens[T]['get']>>;
+type NonPartial<T extends Partial<unknown>> = T extends Partial<infer U> ? U : never;
+
 export interface CategorizedTokens {
     radius: Map<string, Partial<RadiusTokenGroup>>;
     border: Map<string, Partial<BorderTokenGroup>>;
@@ -27,24 +30,18 @@ export interface SpacingTokenGroup {
 
 export type TokenCategory = RadiusCategory | BorderCategory | SpacingCategory | OtherCategory;
 
-export interface RadiusCategory {
-    type: 'radius-category';
+interface Category<T extends keyof CategorizedTokens> {
+    type: T;
+    property: keyof NonPartial<TokenGroupType<T>>;
     groupName: string;
-    property: keyof RadiusTokenGroup;
 }
 
-export interface BorderCategory {
-    type: 'border-category';
-    groupName: string;
-    property: keyof BorderTokenGroup;
-}
+export type RadiusCategory = Category<'radius'>;
 
-export interface SpacingCategory {
-    type: 'spacing-category';
-    groupName: string;
-    property: keyof SpacingTokenGroup;
-}
+export type BorderCategory = Category<'border'>;
+
+export type SpacingCategory = Category<'spacing'>;
 
 export interface OtherCategory {
-    type: 'other-category';
+    type: 'other';
 }

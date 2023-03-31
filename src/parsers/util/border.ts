@@ -1,5 +1,6 @@
 import { DesignToken } from 'style-dictionary';
-import { borderColorType, borderTokenEndings, borderWidthType } from '../../models/border';
+import { borderTokenEndings } from '../../models/token-endings';
+import { tokenTypes } from '../../models/token-types';
 
 export interface BorderProperty {
     description?: string;
@@ -31,13 +32,13 @@ export function flattenBorder(properties: Record<string, BorderProperty>): Recor
 function widthFrom(value: number): DesignToken {
     return {
         value,
-        type: borderWidthType,
+        type: tokenTypes.dimension,
     };
 }
 
 function colorFrom(value: string): DesignToken {
     return {
         value,
-        type: borderColorType,
+        type: tokenTypes.color,
     };
 }

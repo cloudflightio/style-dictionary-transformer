@@ -1,5 +1,6 @@
 import { DesignToken } from 'style-dictionary';
-import { radiusTokenEndings, radiusType } from '../../models/radius';
+import { radiusTokenEndings } from '../../models/token-endings';
+import { tokenTypes } from '../../models/token-types';
 
 export interface RadiusProperty {
     description?: string;
@@ -31,6 +32,6 @@ export function flattenRadius(properties: Record<string, RadiusProperty>): Recor
 function tokenFrom(value: number): DesignToken {
     return {
         value,
-        type: radiusType,
+        type: tokenTypes.dimension,
     };
 }

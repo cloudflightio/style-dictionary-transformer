@@ -1,5 +1,4 @@
 import { Dictionary, Format, TransformedToken } from 'style-dictionary';
-import { allowedTokenTypes } from '../../models/allowed-token-types';
 import { CategorizedTokens, TokenCategory } from './models/token-category';
 import { borderCategoryOf } from './util/border-category';
 import { borderClassesFrom } from './util/border-serialize-class';
@@ -8,10 +7,6 @@ import { radiusCategoryOf } from './util/radius-category';
 import { radiusClassesFrom } from './util/radius-serialize-class';
 import { spacingCategoryOf } from './util/spacing-category';
 import { spacingClassesFrom } from './util/spacing-serialize-class';
-
-type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType extends readonly (infer ElementType)[]
-    ? ElementType
-    : never;
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
@@ -36,34 +31,18 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
             const category = tokenCategorizationFrom(token);
 
             switch (category.type) {
-                case 'radius-category': {
-                    const existingGroup = acc.radius.get(category.groupName) ?? {};
+                case 'radius': // fall through
+                case 'border': // fall through
+                case 'spacing': {
+                    const existingGroup = acc[category.type].get(category.groupName) ?? {};
 
-                    acc.radius.set(category.groupName, {
+                    acc[category.type].set(category.groupName, {
                         ...existingGroup,
                         [category.property]: token,
                     });
                     break;
                 }
-                case 'border-category': {
-                    const existingGroup = acc.border.get(category.groupName) ?? {};
-
-                    acc.border.set(category.groupName, {
-                        ...existingGroup,
-                        [category.property]: token,
-                    });
-                    break;
-                }
-                case 'spacing-category': {
-                    const existingGroup = acc.spacing.get(category.groupName) ?? {};
-
-                    acc.spacing.set(category.groupName, {
-                        ...existingGroup,
-                        [category.property]: token,
-                    });
-                    break;
-                }
-                case 'other-category':
+                case 'other':
                     break;
             }
 
@@ -74,35 +53,28 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
 }
 
 function tokenCategorizationFrom(token: TransformedToken): TokenCategory {
-    const tokenType: ArrayElement<typeof allowedTokenTypes> = token['type'];
-
-    switch (tokenType) {
-        case 'cloudflight-radius':
+    switch (token.attributes?.category) {
+        case 'radius':
             return (
                 radiusCategoryOf(token.name) ?? {
-                    type: 'other-category',
+                    type: 'other',
                 }
             );
-        case 'cloudflight-border-width': // fall through
-        case 'cloudflight-border-color':
+        case 'borders':
             return (
                 borderCategoryOf(token.name) ?? {
-                    type: 'other-category',
+                    type: 'other',
                 }
             );
-        case 'cloudflight-spacing':
+        case 'spacing':
             return (
                 spacingCategoryOf(token.name) ?? {
-                    type: 'other-category',
+                    type: 'other',
                 }
             );
-        case 'custom-opacity': // fall through
-        case 'dimension': // fall through
-        case 'color': // fall through
-        case 'number': // fall through
-        case 'string':
+        default:
             return {
-                type: 'other-category',
+                type: 'other',
             };
     }
 }

@@ -1,5 +1,5 @@
 import { Filter, Named, TransformedToken } from 'style-dictionary';
-import { allowedTokenTypes } from '../models/allowed-token-types';
+import { allowedTokenTypes } from '../models/token-types';
 
 export const cloudflightFilter: Named<Filter> = {
     name: 'cloudflight/filter',

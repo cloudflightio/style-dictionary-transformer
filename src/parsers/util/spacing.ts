@@ -1,5 +1,6 @@
 import { DesignToken } from 'style-dictionary';
-import { spacingTokenEndings, spacingType } from '../../models/spacing';
+import { spacingTokenEndings } from '../../models/token-endings';
+import { tokenTypes } from '../../models/token-types';
 
 export interface SpacingProperty {
     description?: string;
@@ -30,6 +31,6 @@ export function flattenSpacing(properties: Record<string, SpacingProperty>): Rec
 function tokenFrom(value: number): DesignToken {
     return {
         value,
-        type: spacingType,
+        type: tokenTypes.dimension,
     };
 }

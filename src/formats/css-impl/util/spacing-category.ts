@@ -1,4 +1,4 @@
-import { spacingTokenEndings } from '../../../models/spacing';
+import { spacingTokenEndings } from '../../../models/token-endings';
 import { SpacingCategory } from '../models/token-category';
 
 export function spacingCategoryOf(name: string): SpacingCategory | undefined {
@@ -13,7 +13,7 @@ export function spacingCategoryOf(name: string): SpacingCategory | undefined {
     }
 
     return {
-        type: 'spacing-category',
+        type: 'spacing',
         groupName: name.slice(0, endIndex),
         property,
     };

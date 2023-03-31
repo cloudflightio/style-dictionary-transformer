@@ -16,3 +16,17 @@ export const spacingTokenEndings = {
     left: '-left',
     bottom: '-bottom',
 } as const;
+
+export const typographyTokenEndings = {
+    fontSize: '-font-size',
+    textDecoration: '-text-decoration',
+    fontFamily: '-font-family',
+    fontWeight: '-font-weight',
+    fontStyle: '-font-style',
+    fontStretch: '-font-stretch',
+    letterSpacing: '-letter-spacing',
+    lineHeight: '-line-height',
+    paragraphIndent: '-paragraph-indent',
+    paragraphSpacing: '-paragraph-spacing',
+    textCase: '-text-case',
+} as const;

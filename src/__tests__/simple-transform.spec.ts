@@ -3,7 +3,7 @@ import StyleDictionary from 'style-dictionary';
 import { cloudflightPlatformConfigWith, registerItems } from '../index';
 import { readFileMinified } from '../test-util/read-file-minified';
 
-const kinds = ['color', 'size', 'radius', 'opacity', 'border', 'spacing'];
+const kinds = ['color', 'size', 'radius', 'opacity', 'border', 'spacing', 'typography'];
 
 describe('transformations', () => {
     beforeAll(() => {

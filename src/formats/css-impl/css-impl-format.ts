@@ -7,6 +7,8 @@ import { radiusCategoryOf } from './util/radius-category';
 import { radiusClassesFrom } from './util/radius-serialize-class';
 import { spacingCategoryOf } from './util/spacing-category';
 import { spacingClassesFrom } from './util/spacing-serialize-class';
+import { typographyCategoryOf } from './util/typography-category';
+import { typographyClassesFrom } from './util/typography-serialize-class';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
@@ -19,6 +21,7 @@ export const cloudflightCssImplFormat: Format = {
             radiusClassesFrom(category.radius),
             borderClassesFrom(category.border),
             spacingClassesFrom(category.spacing),
+            typographyClassesFrom(category.typography),
         ]
             .filter((item) => item !== '')
             .join('\n\n');
@@ -33,6 +36,7 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
             switch (category.type) {
                 case 'radius': // fall through
                 case 'border': // fall through
+                case 'typography': // fall through
                 case 'spacing': {
                     const existingGroup = acc[category.type].get(category.groupName) ?? {};
 
@@ -48,7 +52,7 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
 
             return acc;
         },
-        { radius: new Map(), border: new Map(), spacing: new Map() },
+        { radius: new Map(), border: new Map(), spacing: new Map(), typography: new Map() },
     );
 }
 
@@ -69,6 +73,12 @@ function tokenCategorizationFrom(token: TransformedToken): TokenCategory {
         case 'spacing':
             return (
                 spacingCategoryOf(token.name) ?? {
+                    type: 'other',
+                }
+            );
+        case 'typography':
+            return (
+                typographyCategoryOf(token.name) ?? {
                     type: 'other',
                 }
             );

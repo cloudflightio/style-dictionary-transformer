@@ -1,10 +1,10 @@
-import { typographyTokenEndings } from '../../../models/token-endings';
-import { TypographyCategory } from '../models/token-category';
+import { fontTokenEndings } from '../../../models/token-endings';
+import { FontCategory } from '../models/token-category';
 
-export function typographyCategoryOf(name: string): TypographyCategory | undefined {
-    const property = typographyPropertyOf(name);
+export function fontCategoryOf(name: string): FontCategory | undefined {
+    const property = fontPropertyOf(name);
 
-    const endIndex = Object.values(typographyTokenEndings)
+    const endIndex = Object.values(fontTokenEndings)
         .map((ending) => name.indexOf(ending))
         .find((index) => index !== -1);
 
@@ -13,14 +13,14 @@ export function typographyCategoryOf(name: string): TypographyCategory | undefin
     }
 
     return {
-        type: 'typography',
+        type: 'font',
         groupName: name.slice(0, endIndex),
         property,
     };
 }
 
-function typographyPropertyOf(name: string): TypographyCategory['property'] | undefined {
-    const foundEnding = Object.values(typographyTokenEndings).find((ending) => name.includes(ending));
+function fontPropertyOf(name: string): FontCategory['property'] | undefined {
+    const foundEnding = Object.values(fontTokenEndings).find((ending) => name.includes(ending));
 
     switch (foundEnding) {
         case '-font-family':
@@ -39,8 +39,6 @@ function typographyPropertyOf(name: string): TypographyCategory['property'] | un
             return 'lineHeight';
         case '-paragraph-indent':
             return 'paragraphIndent';
-        case '-paragraph-spacing':
-            return 'paragraphSpacing';
         case '-text-case':
             return 'textCase';
         case '-text-decoration':

@@ -1,8 +1,8 @@
 import { DesignToken } from 'style-dictionary';
 import { radiusTokenEndings } from '../../models/token-endings';
-import { tokenTypes } from '../../models/token-types';
+import { dimensionTokenFrom } from './token';
 
-export interface RadiusProperty {
+interface RadiusProperty {
     description?: string;
     type: 'custom-radius';
     value: {
@@ -14,24 +14,15 @@ export interface RadiusProperty {
     };
 }
 
-export function flattenRadius(properties: Record<string, RadiusProperty>): Record<string, DesignToken> {
-    return Object.entries(properties)
-        .flatMap(([key, value]) => [
-            { key: key + radiusTokenEndings.topLeft, value: tokenFrom(value.value.topLeft) },
-            { key: key + radiusTokenEndings.topRight, value: tokenFrom(value.value.topRight) },
-            { key: key + radiusTokenEndings.bottomLeft, value: tokenFrom(value.value.bottomLeft) },
-            { key: key + radiusTokenEndings.bottomRight, value: tokenFrom(value.value.bottomRight) },
-        ])
-        .reduce<Record<string, DesignToken>>((acc, entry) => {
-            acc[entry.key] = entry.value;
+export function flattenRadius(property: RadiusProperty): Record<string, DesignToken> {
+    return [
+        { key: radiusTokenEndings.topLeft, value: dimensionTokenFrom(property.value.topLeft) },
+        { key: radiusTokenEndings.topRight, value: dimensionTokenFrom(property.value.topRight) },
+        { key: radiusTokenEndings.bottomLeft, value: dimensionTokenFrom(property.value.bottomLeft) },
+        { key: radiusTokenEndings.bottomRight, value: dimensionTokenFrom(property.value.bottomRight) },
+    ].reduce<Record<string, DesignToken>>((acc, entry) => {
+        acc[entry.key] = entry.value;
 
-            return acc;
-        }, {});
-}
-
-function tokenFrom(value: number): DesignToken {
-    return {
-        value,
-        type: tokenTypes.dimension,
-    };
+        return acc;
+    }, {});
 }

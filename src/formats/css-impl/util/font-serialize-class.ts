@@ -1,7 +1,7 @@
 import { CategorizedTokens } from '../models/token-category';
 import { classesFrom, classFrom } from './classes';
 
-export function typographyClassesFrom(category: CategorizedTokens['typography']): string {
+export function fontClassesFrom(category: CategorizedTokens['font']): string {
     return classesFrom(category, (groupName, tokens) => {
         return classFrom(groupName, [
             tokens.fontFamily?.name != null ? `font-family: var(--${tokens.fontFamily.name});` : '',

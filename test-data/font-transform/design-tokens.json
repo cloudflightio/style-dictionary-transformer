@@ -1,0 +1,410 @@
+{
+    "font": {
+        "headline 3": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 18,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 21.6,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:32d49a3b1eabf8a9b291a5cdaa12404e5b1bfb1b,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "body 1": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 16,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 19.2,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:0d78ff6efa6e025387fec998cfc2e359f8109149,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "body 1 bold": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 16,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 500,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 19.2,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:01d005ccc55174756df1941d304a8d1fec78028f,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "body 2": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 14,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 16.8,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:b17c13618ba66e5ebc82745aab8b046e80fcf709,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "body 2 bold": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 14,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 500,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 16.8,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:f1078b4703d82f2730d466c2ccfd99195ea7b09d,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "": {
+            "inputfield": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 16,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 19.2,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:3f78a52a59902d917140240fafe70039eee45896,",
+                        "exportKey": "font"
+                    }
+                }
+            },
+            "desktop": {
+                "headline 1": {
+                    "type": "custom-fontStyle",
+                    "value": {
+                        "fontSize": 36,
+                        "textDecoration": "none",
+                        "fontFamily": "Roboto",
+                        "fontWeight": 400,
+                        "fontStyle": "normal",
+                        "fontStretch": "normal",
+                        "letterSpacing": 0,
+                        "lineHeight": 43.2,
+                        "paragraphIndent": 0,
+                        "paragraphSpacing": 0,
+                        "textCase": "none"
+                    },
+                    "extensions": {
+                        "org.lukasoppermann.figmaDesignTokens": {
+                            "styleId": "S:e79b445e0d30421f37f9f54c58cb807e9c0af3fb,",
+                            "exportKey": "font"
+                        }
+                    }
+                }
+            }
+        },
+        "button text 1": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 16,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 500,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 19.2,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:86c7f80a84f0c9f0ca010e5b2cb42b5ed7e86444,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "button text 2": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 14,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 500,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 16.8,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:4eacb515810078737f39f37fa9b47d6be94e83c1,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "caption hint": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 12,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 0,
+                "lineHeight": 14.4,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "none"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:04eca3c4058fd57e03519f9b7611b4d27498b867,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "overline": {
+            "type": "custom-fontStyle",
+            "value": {
+                "fontSize": 10,
+                "textDecoration": "none",
+                "fontFamily": "Roboto",
+                "fontWeight": 400,
+                "fontStyle": "normal",
+                "fontStretch": "normal",
+                "letterSpacing": 1,
+                "lineHeight": 12,
+                "paragraphIndent": 0,
+                "paragraphSpacing": 0,
+                "textCase": "uppercase"
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:18db25c090339c2357c508b81c4398b38b5e7bf2,",
+                    "exportKey": "font"
+                }
+            }
+        },
+        "desktop": {
+            "headline 2": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 24,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 28.8,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:932af4919c6a7656e570bac6f4670ed6c554f2eb,",
+                        "exportKey": "font"
+                    }
+                }
+            }
+        },
+        "styleguide": {
+            "title": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 96,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 115.2,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:be962dbe7c7d69709119b211c2ab0301cbfdb3b7,",
+                        "exportKey": "font"
+                    }
+                }
+            },
+            "subtitle": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 24,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 28.8,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:30ea18c3eb7a06d28d0cc0d180e4b3e4c9e64130,",
+                        "exportKey": "font"
+                    }
+                }
+            },
+            "headline 1": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 56,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 67.2,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:61c288b5c9884fa11ce17b9e9e41c06e91a07d1a,",
+                        "exportKey": "font"
+                    }
+                }
+            },
+            "body": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 16,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 19.2,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:cda21362f82c34741ec516206096327f35c9c0d7,",
+                        "exportKey": "font"
+                    }
+                }
+            }
+        },
+        "mobile": {
+            "headline 1": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 28,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 33.6,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:8c2f56d3bfe77a50751e0085c37e0e1862cca404,",
+                        "exportKey": "font"
+                    }
+                }
+            },
+            "headline 2": {
+                "type": "custom-fontStyle",
+                "value": {
+                    "fontSize": 22,
+                    "textDecoration": "none",
+                    "fontFamily": "Roboto",
+                    "fontWeight": 400,
+                    "fontStyle": "normal",
+                    "fontStretch": "normal",
+                    "letterSpacing": 0,
+                    "lineHeight": 26.4,
+                    "paragraphIndent": 0,
+                    "paragraphSpacing": 0,
+                    "textCase": "none"
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:2c81c46a25b52ca0ffeee3530234007db211552e,",
+                        "exportKey": "font"
+                    }
+                }
+            }
+        }
+    }
+}

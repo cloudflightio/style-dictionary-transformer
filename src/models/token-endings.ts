@@ -17,7 +17,7 @@ export const spacingTokenEndings = {
     bottom: '-bottom',
 } as const;
 
-export const typographyTokenEndings = {
+export const fontTokenEndings = {
     fontSize: '-font-size',
     textDecoration: '-text-decoration',
     fontFamily: '-font-family',
@@ -27,6 +27,5 @@ export const typographyTokenEndings = {
     letterSpacing: '-letter-spacing',
     lineHeight: '-line-height',
     paragraphIndent: '-paragraph-indent',
-    paragraphSpacing: '-paragraph-spacing',
     textCase: '-text-case',
 } as const;

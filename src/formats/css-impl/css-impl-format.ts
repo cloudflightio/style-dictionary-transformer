@@ -3,12 +3,12 @@ import { CategorizedTokens, TokenCategory } from './models/token-category';
 import { borderCategoryOf } from './util/border-category';
 import { borderClassesFrom } from './util/border-serialize-class';
 import { customPropertySectionFrom } from './util/custom-properties-serialize';
+import { fontCategoryOf } from './util/font-category';
+import { fontClassesFrom } from './util/font-serialize-class';
 import { radiusCategoryOf } from './util/radius-category';
 import { radiusClassesFrom } from './util/radius-serialize-class';
 import { spacingCategoryOf } from './util/spacing-category';
 import { spacingClassesFrom } from './util/spacing-serialize-class';
-import { typographyCategoryOf } from './util/typography-category';
-import { typographyClassesFrom } from './util/typography-serialize-class';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
@@ -21,7 +21,7 @@ export const cloudflightCssImplFormat: Format = {
             radiusClassesFrom(category.radius),
             borderClassesFrom(category.border),
             spacingClassesFrom(category.spacing),
-            typographyClassesFrom(category.typography),
+            fontClassesFrom(category.font),
         ]
             .filter((item) => item !== '')
             .join('\n\n');
@@ -36,7 +36,7 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
             switch (category.type) {
                 case 'radius': // fall through
                 case 'border': // fall through
-                case 'typography': // fall through
+                case 'font': // fall through
                 case 'spacing': {
                     const existingGroup = acc[category.type].get(category.groupName) ?? {};
 
@@ -52,7 +52,7 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
 
             return acc;
         },
-        { radius: new Map(), border: new Map(), spacing: new Map(), typography: new Map() },
+        { radius: new Map(), border: new Map(), spacing: new Map(), font: new Map() },
     );
 }
 
@@ -76,9 +76,9 @@ function tokenCategorizationFrom(token: TransformedToken): TokenCategory {
                     type: 'other',
                 }
             );
-        case 'typography':
+        case 'font':
             return (
-                typographyCategoryOf(token.name) ?? {
+                fontCategoryOf(token.name) ?? {
                     type: 'other',
                 }
             );

@@ -1,8 +1,8 @@
 import { DesignToken } from 'style-dictionary';
 import { borderTokenEndings } from '../../models/token-endings';
-import { tokenTypes } from '../../models/token-types';
+import { colorTokenFrom, dimensionTokenFrom } from './token';
 
-export interface BorderProperty {
+interface BorderProperty {
     description?: string;
     type: 'custom-stroke';
     value: {
@@ -16,29 +16,13 @@ export interface BorderProperty {
     };
 }
 
-export function flattenBorder(properties: Record<string, BorderProperty>): Record<string, DesignToken> {
-    return Object.entries(properties)
-        .flatMap(([key, value]) => [
-            { key: key + borderTokenEndings.width, value: widthFrom(value.value.weight) },
-            { key: key + borderTokenEndings.color, value: colorFrom(value.value.color) },
-        ])
-        .reduce<Record<string, DesignToken>>((acc, entry) => {
-            acc[entry.key] = entry.value;
+export function flattenBorder(property: BorderProperty): Record<string, DesignToken> {
+    return [
+        { key: borderTokenEndings.width, value: dimensionTokenFrom(property.value.weight) },
+        { key: borderTokenEndings.color, value: colorTokenFrom(property.value.color) },
+    ].reduce<Record<string, DesignToken>>((acc, entry) => {
+        acc[entry.key] = entry.value;
 
-            return acc;
-        }, {});
-}
-
-function widthFrom(value: number): DesignToken {
-    return {
-        value,
-        type: tokenTypes.dimension,
-    };
-}
-
-function colorFrom(value: string): DesignToken {
-    return {
-        value,
-        type: tokenTypes.color,
-    };
+        return acc;
+    }, {});
 }

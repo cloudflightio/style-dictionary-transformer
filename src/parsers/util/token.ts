@@ -22,9 +22,23 @@ export function numberTokenFrom(value: number): DesignToken {
     };
 }
 
+export function timeTokenFrom(value: number): DesignToken {
+    return {
+        value,
+        type: tokenTypes.time,
+    };
+}
+
 export function stringTokenFrom(value: string): DesignToken {
     return {
         value,
         type: tokenTypes.string,
+    };
+}
+
+export function objectTokenFrom<T extends object>(value: T): DesignToken {
+    return {
+        value,
+        type: tokenTypes.object,
     };
 }

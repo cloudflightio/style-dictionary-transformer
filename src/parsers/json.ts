@@ -4,6 +4,7 @@ import { flattenFont } from './util/font';
 import { flattenOpacity } from './util/opacity';
 import { flattenRadius } from './util/radius';
 import { flattenSpacing } from './util/spacing';
+import { flattenTransition } from './util/transition';
 
 export const jsonParser: Parser = {
     pattern: /\.json$/,
@@ -20,6 +21,8 @@ export const jsonParser: Parser = {
                     return flattenSpacing(value);
                 case 'custom-fontStyle':
                     return flattenFont(value);
+                case 'custom-transition':
+                    return flattenTransition(value);
                 default:
                     return value;
             }

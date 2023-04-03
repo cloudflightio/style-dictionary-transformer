@@ -9,6 +9,8 @@ import { radiusCategoryOf } from './util/radius-category';
 import { radiusClassesFrom } from './util/radius-serialize-class';
 import { spacingCategoryOf } from './util/spacing-category';
 import { spacingClassesFrom } from './util/spacing-serialize-class';
+import { transitionCategoryOf } from './util/transition-category';
+import { transitionClassesFrom } from './util/transition-serialize-class';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
@@ -22,6 +24,7 @@ export const cloudflightCssImplFormat: Format = {
             borderClassesFrom(category.border),
             spacingClassesFrom(category.spacing),
             fontClassesFrom(category.font),
+            transitionClassesFrom(category.transition),
         ]
             .filter((item) => item !== '')
             .join('\n\n');
@@ -33,10 +36,11 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
         (acc, token) => {
             const category = tokenCategorizationFrom(token);
 
-            switch (category.type) {
+            switch (category?.type) {
                 case 'radius': // fall through
                 case 'border': // fall through
                 case 'font': // fall through
+                case 'transition': // fall through
                 case 'spacing': {
                     const existingGroup = acc[category.type].get(category.groupName) ?? {};
 
@@ -46,45 +50,29 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
                     });
                     break;
                 }
-                case 'other':
+                case undefined:
                     break;
             }
 
             return acc;
         },
-        { radius: new Map(), border: new Map(), spacing: new Map(), font: new Map() },
+        { radius: new Map(), border: new Map(), spacing: new Map(), font: new Map(), transition: new Map() },
     );
 }
 
-function tokenCategorizationFrom(token: TransformedToken): TokenCategory {
+function tokenCategorizationFrom(token: TransformedToken): TokenCategory | undefined {
     switch (token.attributes?.category) {
         case 'radius':
-            return (
-                radiusCategoryOf(token.name) ?? {
-                    type: 'other',
-                }
-            );
+            return radiusCategoryOf(token.name);
         case 'borders':
-            return (
-                borderCategoryOf(token.name) ?? {
-                    type: 'other',
-                }
-            );
+            return borderCategoryOf(token.name);
         case 'spacing':
-            return (
-                spacingCategoryOf(token.name) ?? {
-                    type: 'other',
-                }
-            );
+            return spacingCategoryOf(token.name);
         case 'font':
-            return (
-                fontCategoryOf(token.name) ?? {
-                    type: 'other',
-                }
-            );
+            return fontCategoryOf(token.name);
+        case 'motion':
+            return transitionCategoryOf(token.name);
         default:
-            return {
-                type: 'other',
-            };
+            return undefined;
     }
 }

@@ -29,3 +29,8 @@ export const fontTokenEndings = {
     paragraphIndent: '-paragraph-indent',
     textCase: '-text-case',
 } as const;
+
+export const transitionTokenEndings = {
+    duration: '-duration',
+    timingFunction: '-timing-function',
+} as const;

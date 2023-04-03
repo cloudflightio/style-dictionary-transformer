@@ -10,6 +10,7 @@ import { fontStyleTransform } from './transforms/font-style';
 import { dropShadowTransform } from './transforms/drop-shadow';
 import { percentTransform } from './transforms/size-percent';
 import { pxTransform } from './transforms/size-px';
+import { secondsTransform } from './transforms/time-s';
 
 export interface CloudflightPlatformConfig {
     styleDeclarationOutputDirectory: string;
@@ -19,6 +20,7 @@ export interface CloudflightPlatformConfig {
 export function registerItems(dictionary: StyleDictionary.Core): void {
     dictionary.registerTransform(colorTransform);
     dictionary.registerTransform(pxTransform);
+    dictionary.registerTransform(secondsTransform);
     dictionary.registerTransform(percentTransform);
     dictionary.registerTransform(fontStyleTransform);
     dictionary.registerTransform(dropShadowTransform);

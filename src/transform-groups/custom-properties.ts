@@ -4,6 +4,7 @@ import { fontStyleTransform } from '../transforms/font-style';
 import { dropShadowTransform } from '../transforms/drop-shadow';
 import { percentTransform } from '../transforms/size-percent';
 import { pxTransform } from '../transforms/size-px';
+import { secondsTransform } from '../transforms/time-s';
 
 export const customPropertiesTransformGroup: Named<TransformGroup> = {
     name: 'cloudflight/css-custom-properties',
@@ -14,6 +15,7 @@ export const customPropertiesTransformGroup: Named<TransformGroup> = {
         'content/icon',
         colorTransform.name,
         pxTransform.name,
+        secondsTransform.name,
         percentTransform.name,
         fontStyleTransform.name,
         dropShadowTransform.name,

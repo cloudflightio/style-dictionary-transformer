@@ -1,0 +1,146 @@
+{
+    "motion": {
+        "slide": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "smart_animate",
+                "duration": 0.3,
+                "easingType": "cubicBezier",
+                "easingFunction": {
+                    "x1": 0,
+                    "x2": 1,
+                    "y1": 0,
+                    "y2": 1
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "move in": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "move_in",
+                "duration": 0.5,
+                "direction": "left",
+                "easingType": "cubicBezier",
+                "easingFunction": {
+                    "x1": 0.41999998688697815,
+                    "x2": 1,
+                    "y1": 0,
+                    "y2": 1
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "dissolve": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "dissolve",
+                "duration": 0.45,
+                "easingType": "cubicBezier",
+                "easingFunction": {
+                    "x1": 0.6968395709991455,
+                    "x2": 0.06683959811925888,
+                    "y1": 0.052326660603284836,
+                    "y2": 0.9323266744613647
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "smart": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "smart_animate",
+                "duration": 0.5,
+                "easingType": "cubicBezier",
+                "easingFunction": {
+                    "x1": 0,
+                    "x2": 1,
+                    "y1": 0,
+                    "y2": 1
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "push": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "push",
+                "duration": 0.5,
+                "direction": "left",
+                "easingType": "cubicBezier",
+                "easingFunction": {
+                    "x1": 0.30000001192092896,
+                    "x2": 0.699999988079071,
+                    "y1": -0.05000000074505806,
+                    "y2": -0.5
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "bouncy": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "push",
+                "duration": 0.958,
+                "direction": "left",
+                "easingType": "spring",
+                "easingFunction": {
+                    "mass": 1,
+                    "stiffness": 600,
+                    "damping": 15
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        },
+        "custom spring": {
+            "description": null,
+            "type": "custom-transition",
+            "value": {
+                "transitionType": "push",
+                "duration": 0.744,
+                "direction": "left",
+                "easingType": "spring",
+                "easingFunction": {
+                    "mass": 1,
+                    "stiffness": 300,
+                    "damping": 20
+                }
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "exportKey": "motion"
+                }
+            }
+        }
+    }
+}

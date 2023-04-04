@@ -1,16 +1,14 @@
-import { Dictionary, Format, TransformedToken } from 'style-dictionary';
-import { CategorizedTokens, TokenCategory } from './models/token-category';
-import { borderCategoryOf } from './util/border-category';
-import { borderClassesFrom } from './util/border-serialize-class';
-import { customPropertySectionFrom } from './util/custom-properties-serialize';
-import { fontCategoryOf } from './util/font-category';
-import { fontClassesFrom } from './util/font-serialize-class';
-import { radiusCategoryOf } from './util/radius-category';
-import { radiusClassesFrom } from './util/radius-serialize-class';
-import { spacingCategoryOf } from './util/spacing-category';
-import { spacingClassesFrom } from './util/spacing-serialize-class';
-import { transitionCategoryOf } from './util/transition-category';
-import { transitionClassesFrom } from './util/transition-serialize-class';
+import { Dictionary, Format } from 'style-dictionary';
+import { CategorizedTokens } from './models/token-category';
+import {
+    borderClassesFrom,
+    fontClassesFrom,
+    radiusClassesFrom,
+    spacingClassesFrom,
+    transitionClassesFrom,
+} from './util/serialize-class';
+import { customPropertySectionFrom } from './util/serialize-custom-properties';
+import { tokenCategorizationFrom } from './util/token-category';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
@@ -32,47 +30,35 @@ export const cloudflightCssImplFormat: Format = {
 };
 
 function categoryFrom(dictionary: Dictionary): CategorizedTokens {
-    return dictionary.allTokens.reduce<CategorizedTokens>(
-        (acc, token) => {
-            const category = tokenCategorizationFrom(token);
+    const accumulator: CategorizedTokens = {
+        radius: new Map(),
+        border: new Map(),
+        spacing: new Map(),
+        font: new Map(),
+        transition: new Map(),
+    };
 
-            switch (category?.type) {
-                case 'radius': // fall through
-                case 'border': // fall through
-                case 'font': // fall through
-                case 'transition': // fall through
-                case 'spacing': {
-                    const existingGroup = acc[category.type].get(category.groupName) ?? {};
+    return dictionary.allTokens.reduce<CategorizedTokens>((acc, token) => {
+        const category = tokenCategorizationFrom(token);
 
-                    acc[category.type].set(category.groupName, {
-                        ...existingGroup,
-                        [category.property]: token,
-                    });
-                    break;
-                }
-                case undefined:
-                    break;
+        switch (category?.type) {
+            case 'radius': // fall through
+            case 'border': // fall through
+            case 'font': // fall through
+            case 'transition': // fall through
+            case 'spacing': {
+                const existingGroup = acc[category.type].get(category.groupName) ?? {};
+
+                acc[category.type].set(category.groupName, {
+                    ...existingGroup,
+                    [category.property]: token,
+                });
+                break;
             }
+            case undefined:
+                break;
+        }
 
-            return acc;
-        },
-        { radius: new Map(), border: new Map(), spacing: new Map(), font: new Map(), transition: new Map() },
-    );
-}
-
-function tokenCategorizationFrom(token: TransformedToken): TokenCategory | undefined {
-    switch (token.attributes?.category) {
-        case 'radius':
-            return radiusCategoryOf(token.name);
-        case 'borders':
-            return borderCategoryOf(token.name);
-        case 'spacing':
-            return spacingCategoryOf(token.name);
-        case 'font':
-            return fontCategoryOf(token.name);
-        case 'motion':
-            return transitionCategoryOf(token.name);
-        default:
-            return undefined;
-    }
+        return acc;
+    }, accumulator);
 }

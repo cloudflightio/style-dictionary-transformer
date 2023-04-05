@@ -29,6 +29,20 @@ export function timeTokenFrom(value: number): DesignToken {
     };
 }
 
+export function percentTokenFrom(value: number): DesignToken {
+    return {
+        value,
+        type: tokenTypes.percent,
+    };
+}
+
+export function degreeTokenFrom(value: number): DesignToken {
+    return {
+        value,
+        type: tokenTypes.degree,
+    };
+}
+
 export function stringTokenFrom(value: string): DesignToken {
     return {
         value,

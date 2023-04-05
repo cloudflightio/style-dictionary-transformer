@@ -1662,6 +1662,7 @@ __metadata:
     eslint-config-prettier: "npm:8.8.0"
     eslint-plugin-storybook: "npm:0.6.11"
     husky: "npm:8.0.3"
+    immer: "npm:^9.0.21"
     jest: "npm:29.5.0"
     lint-staged: "npm:13.2.0"
     prettier: "npm:2.8.7"
@@ -7190,6 +7191,13 @@ __metadata:
   version: 5.2.4
   resolution: "ignore@npm:5.2.4"
   checksum: 55c58d848bb753a2b7e0b4a19352f9212eae2e4a05e4a12753e90b921108a6caa140adf958a5084b144bedd886b44e3bc93f6b4839e5aba1fb4a72c6625da4c1
+  languageName: node
+  linkType: hard
+
+"immer@npm:^9.0.21":
+  version: 9.0.21
+  resolution: "immer@npm:9.0.21"
+  checksum: 7221a9df58a99874a0b51ea838ac43de7d6b3e73cd5a8179e666a5caa24ef7538707c3059826507d12fe4f076c4da5d6a0855df40d11010faf6a9b10390f1c3d
   languageName: node
   linkType: hard
 

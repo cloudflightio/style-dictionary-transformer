@@ -6,6 +6,7 @@ import { customPropertiesTransformGroup } from './transform-groups/custom-proper
 import { scssUsingCustomPropertiesTransformGroup } from './transform-groups/scss-using-custom-properties';
 import { asCustomPropertyTransform } from './transforms/as-custom-property';
 import { colorTransform } from './transforms/color-hex';
+import { degreeTransform } from './transforms/size-degree';
 import { percentTransform } from './transforms/size-percent';
 import { pxTransform } from './transforms/size-px';
 import { secondsTransform } from './transforms/time-s';
@@ -20,6 +21,7 @@ export function registerItems(dictionary: StyleDictionary.Core): void {
     dictionary.registerTransform(pxTransform);
     dictionary.registerTransform(secondsTransform);
     dictionary.registerTransform(percentTransform);
+    dictionary.registerTransform(degreeTransform);
     dictionary.registerTransform(asCustomPropertyTransform);
 
     dictionary.registerTransformGroup(customPropertiesTransformGroup);

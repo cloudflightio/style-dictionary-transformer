@@ -4,6 +4,7 @@ export function classesFrom<T>(
 ): string {
     return Array.from(tokens.entries())
         .map(([groupName, group]) => classFn(groupName, group))
+        .filter((value) => value !== '')
         .join('\n');
 }
 

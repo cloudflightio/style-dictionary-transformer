@@ -1,5 +1,6 @@
 import { Named, TransformGroup } from 'style-dictionary';
 import { colorTransform } from '../transforms/color-hex';
+import { degreeTransform } from '../transforms/size-degree';
 import { percentTransform } from '../transforms/size-percent';
 import { pxTransform } from '../transforms/size-px';
 import { secondsTransform } from '../transforms/time-s';
@@ -15,5 +16,6 @@ export const customPropertiesTransformGroup: Named<TransformGroup> = {
         pxTransform.name,
         secondsTransform.name,
         percentTransform.name,
+        degreeTransform.name,
     ],
 };

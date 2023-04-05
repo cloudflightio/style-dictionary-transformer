@@ -34,3 +34,10 @@ export const transitionTokenEndings = {
     duration: '-duration',
     timingFunction: '-timing-function',
 } as const;
+
+export const gradientTokenEndings = {
+    kind: '-kind',
+    rotation: '-rotation',
+    stepPosition: '-step-position',
+    stepColor: '-step-color',
+} as const;

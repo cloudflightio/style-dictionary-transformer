@@ -1,0 +1,115 @@
+{
+    "gradient": {
+        "gradient": {
+            "single with multiple color stops": {
+                "description": "Four color stops from yellow to red",
+                "type": "custom-gradient",
+                "value": {
+                    "gradientType": "radial",
+                    "rotation": 180,
+                    "stops": [
+                        {
+                            "position": 0,
+                            "color": "#ffb800ff"
+                        },
+                        {
+                            "position": 0.34,
+                            "color": "#ff8a00ff"
+                        },
+                        {
+                            "position": 0.65,
+                            "color": "#ff2e00ff"
+                        },
+                        {
+                            "position": 1,
+                            "color": "#ff0000ff"
+                        }
+                    ]
+                },
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:992ce7e0da85c86cfb620c275aa51b1fcb457ba3,",
+                        "exportKey": "gradient"
+                    }
+                }
+            },
+            "multiplegrad": {
+                "0": {
+                    "type": "custom-gradient",
+                    "value": {
+                        "gradientType": "linear",
+                        "rotation": 180,
+                        "stops": [
+                            {
+                                "position": 0,
+                                "color": "#ffb800ff"
+                            },
+                            {
+                                "position": 1,
+                                "color": "#ffb80000"
+                            }
+                        ]
+                    }
+                },
+                "1": {
+                    "type": "custom-gradient",
+                    "value": {
+                        "gradientType": "radial",
+                        "rotation": 180,
+                        "stops": [
+                            {
+                                "position": 0,
+                                "color": "#ffffffff"
+                            },
+                            {
+                                "position": 1,
+                                "color": "#ffffff00"
+                            }
+                        ]
+                    }
+                },
+                "2": {
+                    "type": "custom-gradient",
+                    "value": {
+                        "gradientType": "angular",
+                        "rotation": 180,
+                        "stops": [
+                            {
+                                "position": 0,
+                                "color": "#cf3030ff"
+                            },
+                            {
+                                "position": 1,
+                                "color": "#ffffff00"
+                            }
+                        ]
+                    }
+                },
+                "3": {
+                    "type": "custom-gradient",
+                    "value": {
+                        "gradientType": "diamond",
+                        "rotation": 180,
+                        "stops": [
+                            {
+                                "position": 0,
+                                "color": "#4a4fccff"
+                            },
+                            {
+                                "position": 0.23,
+                                "color": "#ffffff00"
+                            }
+                        ]
+                    }
+                },
+                "description": "",
+                "extensions": {
+                    "org.lukasoppermann.figmaDesignTokens": {
+                        "styleId": "S:6cc59d1a072ae749dc817e928d995053dfd03b08,",
+                        "exportKey": "gradient"
+                    }
+                }
+            }
+        }
+    }
+}

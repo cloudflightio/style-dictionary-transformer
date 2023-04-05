@@ -7,6 +7,7 @@ import {
     spacingClassesFrom,
     transitionClassesFrom,
 } from './util/serialize-class';
+import { gradientClassesFrom } from './util/serialize-class-gradient';
 import { customPropertySectionFrom } from './util/serialize-custom-properties';
 import { tokenCategorizationFrom } from './util/token-category';
 
@@ -23,6 +24,7 @@ export const cloudflightCssImplFormat: Format = {
             spacingClassesFrom(category.spacing),
             fontClassesFrom(category.font),
             transitionClassesFrom(category.transition),
+            gradientClassesFrom(category.gradient),
         ]
             .filter((item) => item !== '')
             .join('\n\n');
@@ -36,28 +38,19 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
         spacing: new Map(),
         font: new Map(),
         transition: new Map(),
+        gradient: new Map(),
     };
 
     return dictionary.allTokens.reduce<CategorizedTokens>((acc, token) => {
         const category = tokenCategorizationFrom(token);
 
-        switch (category?.type) {
-            case 'radius': // fall through
-            case 'border': // fall through
-            case 'font': // fall through
-            case 'transition': // fall through
-            case 'spacing': {
-                const existingGroup = acc[category.type].get(category.groupName) ?? {};
-
-                acc[category.type].set(category.groupName, {
-                    ...existingGroup,
-                    [category.property]: token,
-                });
-                break;
-            }
-            case undefined:
-                break;
+        if (category == null) {
+            return acc;
         }
+
+        const existingGroup = acc[category.type].get(category.groupName) ?? {};
+
+        acc[category.type].set(category.groupName, category.applyFn(existingGroup));
 
         return acc;
     }, accumulator);

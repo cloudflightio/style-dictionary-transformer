@@ -1,7 +1,9 @@
+import produce from 'immer';
 import { TransformedToken } from 'style-dictionary';
 import {
     borderTokenEndings,
     fontTokenEndings,
+    gradientTokenEndings,
     radiusTokenEndings,
     spacingTokenEndings,
     transitionTokenEndings,
@@ -9,6 +11,7 @@ import {
 import {
     BorderCategory,
     FontCategory,
+    GradientCategory,
     RadiusCategory,
     SpacingCategory,
     TokenCategory,
@@ -19,23 +22,25 @@ import { groupNameOf, propertyOf } from './token-category-util';
 export function tokenCategorizationFrom(token: TransformedToken): TokenCategory | undefined {
     switch (token.attributes?.category) {
         case 'radius':
-            return radiusCategoryOf(token.name);
+            return radiusCategoryOf(token);
         case 'borders':
-            return borderCategoryOf(token.name);
+            return borderCategoryOf(token);
         case 'spacing':
-            return spacingCategoryOf(token.name);
+            return spacingCategoryOf(token);
         case 'font':
-            return fontCategoryOf(token.name);
+            return fontCategoryOf(token);
         case 'motion':
-            return transitionCategoryOf(token.name);
+            return transitionCategoryOf(token);
+        case 'gradient':
+            return gradientCategoryOf(token);
         default:
             return undefined;
     }
 }
 
-function borderCategoryOf(name: string): BorderCategory | undefined {
-    const property = propertyOf(name, borderTokenEndings);
-    const groupName = groupNameOf(name, Object.values(borderTokenEndings));
+function borderCategoryOf(token: TransformedToken): BorderCategory | undefined {
+    const property = propertyOf(token.name, borderTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(borderTokenEndings));
 
     if (property == null || groupName == null) {
         return undefined;
@@ -44,13 +49,17 @@ function borderCategoryOf(name: string): BorderCategory | undefined {
     return {
         type: 'border',
         groupName,
-        property,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
     };
 }
 
-function fontCategoryOf(name: string): FontCategory | undefined {
-    const property = propertyOf(name, fontTokenEndings);
-    const groupName = groupNameOf(name, Object.values(fontTokenEndings));
+function fontCategoryOf(token: TransformedToken): FontCategory | undefined {
+    const property = propertyOf(token.name, fontTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(fontTokenEndings));
 
     if (property == null || groupName == null) {
         return undefined;
@@ -59,13 +68,17 @@ function fontCategoryOf(name: string): FontCategory | undefined {
     return {
         type: 'font',
         groupName,
-        property,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
     };
 }
 
-function radiusCategoryOf(name: string): RadiusCategory | undefined {
-    const property = propertyOf(name, radiusTokenEndings);
-    const groupName = groupNameOf(name, Object.values(radiusTokenEndings));
+function radiusCategoryOf(token: TransformedToken): RadiusCategory | undefined {
+    const property = propertyOf(token.name, radiusTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(radiusTokenEndings));
 
     if (property == null || groupName == null) {
         return undefined;
@@ -74,13 +87,17 @@ function radiusCategoryOf(name: string): RadiusCategory | undefined {
     return {
         type: 'radius',
         groupName,
-        property,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
     };
 }
 
-function spacingCategoryOf(name: string): SpacingCategory | undefined {
-    const property = propertyOf(name, spacingTokenEndings);
-    const groupName = groupNameOf(name, Object.values(spacingTokenEndings));
+function spacingCategoryOf(token: TransformedToken): SpacingCategory | undefined {
+    const property = propertyOf(token.name, spacingTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(spacingTokenEndings));
 
     if (property == null || groupName == null) {
         return undefined;
@@ -89,13 +106,17 @@ function spacingCategoryOf(name: string): SpacingCategory | undefined {
     return {
         type: 'spacing',
         groupName,
-        property,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
     };
 }
 
-function transitionCategoryOf(name: string): TransitionCategory | undefined {
-    const property = propertyOf(name, transitionTokenEndings);
-    const groupName = groupNameOf(name, Object.values(transitionTokenEndings));
+function transitionCategoryOf(token: TransformedToken): TransitionCategory | undefined {
+    const property = propertyOf(token.name, transitionTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(transitionTokenEndings));
 
     if (property == null || groupName == null) {
         return undefined;
@@ -104,6 +125,70 @@ function transitionCategoryOf(name: string): TransitionCategory | undefined {
     return {
         type: 'transition',
         groupName,
-        property,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
     };
+}
+
+function gradientCategoryOf(token: TransformedToken): GradientCategory | undefined {
+    const property = propertyOf(token.name, gradientTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(gradientTokenEndings));
+
+    if (property == null || groupName == null) {
+        return undefined;
+    }
+
+    const stepIndex = gradientStepIndexOf(groupName);
+    let properGroupName: string;
+
+    switch (property) {
+        case 'rotation': // fall through
+        case 'kind':
+            properGroupName = groupName;
+            break;
+        case 'stepColor': // fall through
+        case 'stepPosition':
+            properGroupName = groupName.slice(0, groupName.length - 2);
+            break;
+    }
+
+    return {
+        type: 'gradient',
+        groupName: properGroupName,
+        applyFn(group) {
+            switch (property) {
+                case 'rotation': // fall through
+                case 'kind':
+                    return produce(group, (draft) => {
+                        draft[property] = token;
+                    });
+                case 'stepColor': // fall through
+                case 'stepPosition':
+                    return produce(group, (draft) => {
+                        if (draft.steps == null) {
+                            draft.steps = [];
+                        }
+
+                        const step = draft.steps[stepIndex] ?? {};
+
+                        step[property] = token;
+
+                        draft.steps[stepIndex] = step;
+                    });
+            }
+        },
+    };
+}
+
+function gradientStepIndexOf(groupName: string): number {
+    const lastChar = groupName[groupName.length - 1];
+
+    if (lastChar == null) {
+        return 0;
+    }
+
+    return parseInt(lastChar, 10);
 }

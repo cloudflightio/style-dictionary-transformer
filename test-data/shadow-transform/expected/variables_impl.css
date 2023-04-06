@@ -1,0 +1,13 @@
+:root {
+    --effect-drop-shadow-single-radius: 4px;
+    --effect-drop-shadow-single-color: #000000;
+    --effect-drop-shadow-single-offset-x: 0;
+    --effect-drop-shadow-single-offset-y: 4px;
+}
+
+.effect-drop-shadow-single {
+    filter: drop-shadow(
+        var(--effect-drop-shadow-single-offset-x) var(--effect-drop-shadow-single-offset-y)
+            var(--effect-drop-shadow-single-radius) var(--effect-drop-shadow-single-color)
+    );
+}

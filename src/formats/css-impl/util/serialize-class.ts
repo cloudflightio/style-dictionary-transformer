@@ -59,3 +59,19 @@ export function transitionClassesFrom(category: CategorizedTokens['transition'])
         ]);
     });
 }
+
+export function shadowClassesFrom(category: CategorizedTokens['shadow']): string {
+    return classesFrom(category, (groupName, tokens) => {
+        if (tokens.offsetX == null || tokens.offsetY == null) {
+            return '';
+        }
+
+        const y = [tokens.offsetX.name, tokens.offsetY.name, tokens.radius?.name ?? '', tokens.color?.name ?? '']
+            .filter((value) => value !== '')
+            .map((value) => `var(--${value})`);
+
+        const x = `filter: drop-shadow(${y.join(' ')});`;
+
+        return classFrom(groupName, [x]);
+    });
+}

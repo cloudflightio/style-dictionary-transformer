@@ -4,6 +4,7 @@ import {
     borderClassesFrom,
     fontClassesFrom,
     radiusClassesFrom,
+    shadowClassesFrom,
     spacingClassesFrom,
     transitionClassesFrom,
 } from './util/serialize-class';
@@ -25,6 +26,7 @@ export const cloudflightCssImplFormat: Format = {
             fontClassesFrom(category.font),
             transitionClassesFrom(category.transition),
             gradientClassesFrom(category.gradient),
+            shadowClassesFrom(category.shadow),
         ]
             .filter((item) => item !== '')
             .join('\n\n');
@@ -39,6 +41,7 @@ function categoryFrom(dictionary: Dictionary): CategorizedTokens {
         font: new Map(),
         transition: new Map(),
         gradient: new Map(),
+        shadow: new Map(),
     };
 
     return dictionary.allTokens.reduce<CategorizedTokens>((acc, token) => {

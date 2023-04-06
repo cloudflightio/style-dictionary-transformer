@@ -41,3 +41,10 @@ export const gradientTokenEndings = {
     stepPosition: '-step-position',
     stepColor: '-step-color',
 } as const;
+
+export const shadowTokenEndings = {
+    radius: '-radius',
+    color: '-color',
+    offsetX: '-offset-x',
+    offsetY: '-offset-y',
+} as const;

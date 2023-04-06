@@ -4,6 +4,7 @@ import { flattenFont } from './util/font';
 import { flattenGradient } from './util/gradient';
 import { flattenOpacity } from './util/opacity';
 import { flattenRadius } from './util/radius';
+import { flattenShadow } from './util/shadow';
 import { flattenSpacing } from './util/spacing';
 import { flattenTransition } from './util/transition';
 
@@ -26,6 +27,8 @@ export const jsonParser: Parser = {
                     return flattenTransition(value);
                 case 'custom-gradient':
                     return flattenGradient(value);
+                case 'custom-shadow':
+                    return flattenShadow(value);
                 default:
                     return value;
             }

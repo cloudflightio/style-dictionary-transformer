@@ -5,6 +5,7 @@ import {
     fontTokenEndings,
     gradientTokenEndings,
     radiusTokenEndings,
+    shadowTokenEndings,
     spacingTokenEndings,
     transitionTokenEndings,
 } from '../../../models/token-endings';
@@ -13,6 +14,7 @@ import {
     FontCategory,
     GradientCategory,
     RadiusCategory,
+    ShadowCategory,
     SpacingCategory,
     TokenCategory,
     TransitionCategory,
@@ -33,6 +35,8 @@ export function tokenCategorizationFrom(token: TransformedToken): TokenCategory 
             return transitionCategoryOf(token);
         case 'gradient':
             return gradientCategoryOf(token);
+        case 'effect':
+            return shadowCategoryOf(token);
         default:
             return undefined;
     }
@@ -191,4 +195,23 @@ function gradientStepIndexOf(groupName: string): number {
     }
 
     return parseInt(lastChar, 10);
+}
+
+function shadowCategoryOf(token: TransformedToken): ShadowCategory | undefined {
+    const property = propertyOf(token.name, shadowTokenEndings);
+    const groupName = groupNameOf(token.name, Object.values(shadowTokenEndings));
+
+    if (property == null || groupName == null) {
+        return undefined;
+    }
+
+    return {
+        type: 'shadow',
+        groupName,
+        applyFn(group) {
+            return produce(group, (draft) => {
+                draft[property] = token;
+            });
+        },
+    };
 }

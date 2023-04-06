@@ -4,6 +4,7 @@ import {
     fontTokenEndings,
     gradientTokenEndings,
     radiusTokenEndings,
+    shadowTokenEndings,
     spacingTokenEndings,
     transitionTokenEndings,
 } from '../../../models/token-endings';
@@ -17,6 +18,7 @@ export interface CategorizedTokens {
     font: Map<string, Partial<FontTokenGroup>>;
     transition: Map<string, Partial<TransitionTokenGroup>>;
     gradient: Map<string, Partial<GradientTokenGroup>>;
+    shadow: Map<string, Partial<ShadowTokenGroup>>;
 }
 
 export type RadiusTokenGroup = Record<keyof typeof radiusTokenEndings, TransformedToken>;
@@ -30,6 +32,7 @@ export type GradientTokenGroup = Record<
 > & {
     steps: Partial<Record<keyof Pick<typeof gradientTokenEndings, 'stepPosition' | 'stepColor'>, TransformedToken>>[];
 };
+export type ShadowTokenGroup = Record<keyof typeof shadowTokenEndings, TransformedToken>;
 
 export type TokenCategory =
     | RadiusCategory
@@ -37,7 +40,8 @@ export type TokenCategory =
     | SpacingCategory
     | FontCategory
     | TransitionCategory
-    | GradientCategory;
+    | GradientCategory
+    | ShadowCategory;
 
 interface Category<T extends keyof CategorizedTokens> {
     type: T;
@@ -51,3 +55,4 @@ export type SpacingCategory = Category<'spacing'>;
 export type FontCategory = Category<'font'>;
 export type TransitionCategory = Category<'transition'>;
 export type GradientCategory = Category<'gradient'>;
+export type ShadowCategory = Category<'shadow'>;

@@ -21,18 +21,15 @@ export interface CategorizedTokens {
     shadow: Map<string, Partial<ShadowTokenGroup>>;
 }
 
-export type RadiusTokenGroup = Record<keyof typeof radiusTokenEndings, TransformedToken>;
-export type BorderTokenGroup = Record<keyof typeof borderTokenEndings, TransformedToken>;
-export type SpacingTokenGroup = Record<keyof typeof spacingTokenEndings, TransformedToken>;
-export type FontTokenGroup = Record<keyof typeof fontTokenEndings, TransformedToken>;
-export type TransitionTokenGroup = Record<keyof typeof transitionTokenEndings, TransformedToken>;
-export type GradientTokenGroup = Record<
-    keyof Pick<typeof gradientTokenEndings, 'kind' | 'rotation'>,
-    TransformedToken
-> & {
+type RadiusTokenGroup = Record<keyof typeof radiusTokenEndings, TransformedToken>;
+type BorderTokenGroup = Record<keyof typeof borderTokenEndings, TransformedToken>;
+type SpacingTokenGroup = Record<keyof typeof spacingTokenEndings, TransformedToken>;
+type FontTokenGroup = Record<keyof typeof fontTokenEndings, TransformedToken>;
+type TransitionTokenGroup = Record<keyof typeof transitionTokenEndings, TransformedToken>;
+type GradientTokenGroup = Record<keyof Pick<typeof gradientTokenEndings, 'kind' | 'rotation'>, TransformedToken> & {
     steps: Partial<Record<keyof Pick<typeof gradientTokenEndings, 'stepPosition' | 'stepColor'>, TransformedToken>>[];
 };
-export type ShadowTokenGroup = Record<keyof typeof shadowTokenEndings, TransformedToken>;
+type ShadowTokenGroup = Record<keyof typeof shadowTokenEndings, TransformedToken>;
 
 export type TokenCategory =
     | RadiusCategory

@@ -1,0 +1,82 @@
+{
+    "effect": {
+        "drop shadow (single)": {
+            "description": "Drop shadow single description",
+            "type": "custom-shadow",
+            "value": {
+                "shadowType": "dropShadow",
+                "radius": 4,
+                "color": "#00000040",
+                "offsetX": 0,
+                "offsetY": 4,
+                "spread": 0
+            },
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:7f382219ef8294b8ed077ce5655b293676ece462,",
+                    "exportKey": "effect"
+                }
+            }
+        },
+        "inner shadow (multiple)": {
+            "0": {
+                "type": "custom-shadow",
+                "value": {
+                    "shadowType": "innerShadow",
+                    "radius": 4,
+                    "color": "#00000040",
+                    "offsetX": 0,
+                    "offsetY": 4,
+                    "spread": 0
+                }
+            },
+            "1": {
+                "type": "custom-shadow",
+                "value": {
+                    "shadowType": "innerShadow",
+                    "radius": 1,
+                    "color": "#000000ff",
+                    "offsetX": 10,
+                    "offsetY": 100,
+                    "spread": 0.5
+                }
+            },
+            "2": {
+                "type": "custom-shadow",
+                "value": {
+                    "shadowType": "innerShadow",
+                    "radius": 3,
+                    "color": "#00000040",
+                    "offsetX": -4,
+                    "offsetY": 2,
+                    "spread": 11
+                }
+            },
+            "description": null,
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:665af8ed4df7abcc1304b36433784228b548f223,",
+                    "exportKey": "effect"
+                }
+            }
+        },
+        "layer blur": {
+            "description": null,
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:74adc7cae62f5061967e3b37be90637b93b84c9f,",
+                    "exportKey": "effect"
+                }
+            }
+        },
+        "background blur": {
+            "description": null,
+            "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                    "styleId": "S:8014b4e83312e63f07e6bb3f9e59d4263825102b,",
+                    "exportKey": "effect"
+                }
+            }
+        }
+    }
+}

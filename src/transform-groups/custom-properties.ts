@@ -1,21 +1,7 @@
 import { Named, TransformGroup } from 'style-dictionary';
-import { colorTransform } from '../transforms/color-hex';
-import { degreeTransform } from '../transforms/size-degree';
-import { percentTransform } from '../transforms/size-percent';
-import { pxTransform } from '../transforms/size-px';
-import { secondsTransform } from '../transforms/time-s';
+import { tokenTransform } from '../transforms/token';
 
 export const customPropertiesTransformGroup: Named<TransformGroup> = {
     name: 'cloudflight/css-custom-properties',
-    transforms: [
-        'attribute/cti',
-        'name/cti/kebab',
-        'time/seconds',
-        'content/icon',
-        colorTransform.name,
-        pxTransform.name,
-        secondsTransform.name,
-        percentTransform.name,
-        degreeTransform.name,
-    ],
+    transforms: ['attribute/cti', 'name/cti/kebab', 'time/seconds', 'content/icon', tokenTransform.name],
 };

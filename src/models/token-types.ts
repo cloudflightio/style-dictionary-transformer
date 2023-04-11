@@ -1,12 +1,12 @@
-export const tokenTypes = {
-    dimension: 'dimension',
-    string: 'string',
-    number: 'number',
-    time: 'time',
-    percent: 'percent',
-    degree: 'degree',
-    color: 'color',
-    object: 'object',
-} as const;
-
-export const allowedTokenTypes = Object.values(tokenTypes);
+export const tokenTypes = [
+    'color',
+    'dimension',
+    'custom-radius',
+    'custom-stroke',
+    'custom-spacing',
+    'custom-opacity',
+    'custom-fontStyle',
+    'custom-transition',
+    'custom-gradient',
+    'custom-shadow',
+] as const;

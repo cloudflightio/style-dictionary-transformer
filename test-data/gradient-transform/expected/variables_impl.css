@@ -1,5 +1,4 @@
 :root {
-    --gradient-gradient-single-with-multiple-color-stops-kind: radial;
     --gradient-gradient-single-with-multiple-color-stops-rotation: 180deg;
     --gradient-gradient-single-with-multiple-color-stops-0-step-position: 0;
     --gradient-gradient-single-with-multiple-color-stops-0-step-color: #ffb800;
@@ -9,30 +8,16 @@
     --gradient-gradient-single-with-multiple-color-stops-2-step-color: #ff2e00;
     --gradient-gradient-single-with-multiple-color-stops-3-step-position: 100%;
     --gradient-gradient-single-with-multiple-color-stops-3-step-color: #ff0000;
-    --gradient-gradient-multiplegrad-0-kind: linear;
     --gradient-gradient-multiplegrad-0-rotation: 180deg;
     --gradient-gradient-multiplegrad-0-0-step-position: 0;
     --gradient-gradient-multiplegrad-0-0-step-color: #ffb800;
     --gradient-gradient-multiplegrad-0-1-step-position: 100%;
     --gradient-gradient-multiplegrad-0-1-step-color: #ffb800;
-    --gradient-gradient-multiplegrad-1-kind: radial;
     --gradient-gradient-multiplegrad-1-rotation: 180deg;
     --gradient-gradient-multiplegrad-1-0-step-position: 0;
     --gradient-gradient-multiplegrad-1-0-step-color: #ffffff;
     --gradient-gradient-multiplegrad-1-1-step-position: 100%;
     --gradient-gradient-multiplegrad-1-1-step-color: #ffffff;
-    --gradient-gradient-multiplegrad-2-kind: angular;
-    --gradient-gradient-multiplegrad-2-rotation: 180deg;
-    --gradient-gradient-multiplegrad-2-0-step-position: 0;
-    --gradient-gradient-multiplegrad-2-0-step-color: #cf3030;
-    --gradient-gradient-multiplegrad-2-1-step-position: 100%;
-    --gradient-gradient-multiplegrad-2-1-step-color: #ffffff;
-    --gradient-gradient-multiplegrad-3-kind: diamond;
-    --gradient-gradient-multiplegrad-3-rotation: 180deg;
-    --gradient-gradient-multiplegrad-3-0-step-position: 0;
-    --gradient-gradient-multiplegrad-3-0-step-color: #4a4fcc;
-    --gradient-gradient-multiplegrad-3-1-step-position: 23%;
-    --gradient-gradient-multiplegrad-3-1-step-color: #ffffff;
 }
 
 .gradient-gradient-single-with-multiple-color-stops {

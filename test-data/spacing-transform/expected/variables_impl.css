@@ -25,6 +25,10 @@
     padding-left: var(--spacing-mixed-left);
     padding-bottom: var(--spacing-mixed-bottom);
 }
-.spacing {
-    padding-top: var(--spacing-top-bottom);
+
+.spacing-top {
+    padding-top: var(--spacing-top-top);
+    padding-right: var(--spacing-top-right);
+    padding-left: var(--spacing-top-left);
+    padding-bottom: var(--spacing-top-bottom);
 }

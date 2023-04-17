@@ -4,12 +4,7 @@
     --motion-move-in-duration: 0.5s;
     --motion-move-in-timing-function: cubic-bezier(0.41999998688697815, 1, 0, 1);
     --motion-dissolve-duration: 0.45s;
-    --motion-dissolve-timing-function: cubic-bezier(
-        0.6968395709991455,
-        0.06683959811925888,
-        0.052326660603284836,
-        0.9323266744613647
-    );
+    --motion-dissolve-timing-function: cubic-bezier(0.6968395709991455, 0.06683959811925888, 0.052326660603284836, 0.9323266744613647);
     --motion-smart-duration: 0.5s;
     --motion-smart-timing-function: cubic-bezier(0, 1, 0, 1);
     --motion-push-duration: 0.5s;

@@ -1,11 +1,11 @@
 import StyleDictionary from 'style-dictionary';
-import { cloudflightFilter } from './filters';
-import { cloudflightCssImplFormat } from './formats/css-impl-format';
-import { cloudflightScssVarFormat } from './formats/scss-var-format';
-import { jsonParser } from './parsers/json';
-import { customPropertiesTransformGroup } from './transform-groups/custom-properties';
-import { scssUsingCustomPropertiesTransformGroup } from './transform-groups/scss-using-custom-properties';
-import { tokenTransform } from './transforms/token';
+import {cloudflightFilter} from './filters';
+import {cloudflightCssImplFormat} from './formats/css-impl-format';
+import {cloudflightScssVarFormat} from './formats/scss-var-format';
+import {jsonParser} from './parsers/json';
+import {customPropertiesTransformGroup} from './transform-groups/custom-properties';
+import {scssUsingCustomPropertiesTransformGroup} from './transform-groups/scss-using-custom-properties';
+import {tokenTransform} from './transforms/token';
 
 export interface CloudflightPlatformConfig {
     styleDeclarationOutputDirectory: string;
@@ -26,9 +26,7 @@ export function registerItems(dictionary: StyleDictionary.Core): void {
     dictionary.registerParser(jsonParser);
 }
 
-export function cloudflightPlatformConfigWith(
-    config: CloudflightPlatformConfig,
-): Record<string, StyleDictionary.Platform> {
+export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig): Record<string, StyleDictionary.Platform> {
     const declarationOutputDir = normalizeOutputDirectory(config.styleDeclarationOutputDirectory);
     const implOutputDir = normalizeOutputDirectory(config.styleImplOutputDirectory ?? declarationOutputDir);
 

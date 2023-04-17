@@ -1,6 +1,6 @@
-import { spacingTokenEndings } from '../../models/token-endings';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {spacingTokenEndings} from '../../models/token-endings';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function spacingToCustomProperties(tokens: CategorizedTokens['spacing']): string {
     return itemsFrom(tokens, (token) => {

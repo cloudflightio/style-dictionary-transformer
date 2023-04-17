@@ -1,7 +1,7 @@
-import { gradientTokenEndings } from '../../models/token-endings';
-import { TransformedGradientToken } from '../../models/transformed-token';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {gradientTokenEndings} from '../../models/token-endings';
+import {TransformedGradientToken} from '../../models/transformed-token';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function gradientToCustomProperties(tokens: CategorizedTokens['gradient']): string {
     return itemsFrom(tokens, (token) => {

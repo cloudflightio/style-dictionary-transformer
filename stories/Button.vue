@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
+import {computed} from 'vue';
 
 const props = withDefaults(
     defineProps<{
@@ -24,7 +24,7 @@ const props = withDefaults(
          */
         backgroundColor?: string;
     }>(),
-    { primary: false },
+    {primary: false},
 );
 
 const emit = defineEmits<{

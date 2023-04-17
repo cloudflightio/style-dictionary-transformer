@@ -1,19 +1,19 @@
-import { Format } from 'style-dictionary';
-import { borderToScssVariables } from './serializer/border';
-import { colorToScssVariables } from './serializer/color';
-import { fontToScssVariables } from './serializer/font';
-import { gradientToScssVariables } from './serializer/gradient';
-import { opacityToScssVariables } from './serializer/opacity';
-import { radiusToScssVariables } from './serializer/radius';
-import { shadowToScssVariables } from './serializer/shadow';
-import { sizeToScssVariables } from './serializer/size';
-import { spacingToScssVariables } from './serializer/spacing';
-import { transitionToScssVariables } from './serializer/transition';
-import { categoryFrom } from './util/category';
+import {Format} from 'style-dictionary';
+import {borderToScssVariables} from './serializer/border';
+import {colorToScssVariables} from './serializer/color';
+import {fontToScssVariables} from './serializer/font';
+import {gradientToScssVariables} from './serializer/gradient';
+import {opacityToScssVariables} from './serializer/opacity';
+import {radiusToScssVariables} from './serializer/radius';
+import {shadowToScssVariables} from './serializer/shadow';
+import {sizeToScssVariables} from './serializer/size';
+import {spacingToScssVariables} from './serializer/spacing';
+import {transitionToScssVariables} from './serializer/transition';
+import {categoryFrom} from './util/category';
 
 export const cloudflightScssVarFormat: Format = {
     name: 'cloudflight/scss-var-format',
-    formatter({ dictionary }) {
+    formatter({dictionary}) {
         const category = categoryFrom(dictionary);
 
         return [

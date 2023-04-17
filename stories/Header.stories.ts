@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type {Meta, StoryObj} from '@storybook/vue3';
 
 import MyHeader from './Header.vue';
 
@@ -10,9 +10,9 @@ const meta = {
     title: 'Example/Header',
     component: MyHeader,
     render: (args) => ({
-        components: { MyHeader },
+        components: {MyHeader},
         setup() {
-            return { args };
+            return {args};
         },
         template: '<my-header :user="args.user" />',
     }),

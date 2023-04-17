@@ -1,5 +1,5 @@
-import { Dictionary } from 'style-dictionary';
-import { tokenTypes } from '../../models/token-types';
+import {Dictionary} from 'style-dictionary';
+import {tokenTypes} from '../../models/token-types';
 import {
     TransformedBorderToken,
     TransformedColorToken,
@@ -12,8 +12,8 @@ import {
     TransformedSpacingToken,
     TransformedTransitionToken,
 } from '../../models/transformed-token';
-import { ArrayElement } from '../../util/array';
-import { CategorizedTokens } from '../models/categorized-tokens';
+import {ArrayElement} from '../../util/array';
+import {CategorizedTokens} from '../models/categorized-tokens';
 
 export function categoryFrom(dictionary: Dictionary): CategorizedTokens {
     const accumulator: CategorizedTokens = {

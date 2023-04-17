@@ -1,19 +1,19 @@
-import { Format } from 'style-dictionary';
-import { borderToCssClasses, borderToCustomProperties } from './serializer/border';
-import { colorToCustomProperties } from './serializer/color';
-import { fontToCssClasses, fontToCustomProperties } from './serializer/font';
-import { gradientToCssClasses, gradientToCustomProperties } from './serializer/gradient';
-import { opacityToCustomProperties } from './serializer/opacity';
-import { radiusToCssClasses, radiusToCustomProperties } from './serializer/radius';
-import { shadowToCssClasses, shadowToCustomProperties } from './serializer/shadow';
-import { sizeToCustomProperties } from './serializer/size';
-import { spacingToCssClasses, spacingToCustomProperties } from './serializer/spacing';
-import { transitionToCssClasses, transitionToCustomProperties } from './serializer/transition';
-import { categoryFrom } from './util/category';
+import {Format} from 'style-dictionary';
+import {borderToCssClasses, borderToCustomProperties} from './serializer/border';
+import {colorToCustomProperties} from './serializer/color';
+import {fontToCssClasses, fontToCustomProperties} from './serializer/font';
+import {gradientToCssClasses, gradientToCustomProperties} from './serializer/gradient';
+import {opacityToCustomProperties} from './serializer/opacity';
+import {radiusToCssClasses, radiusToCustomProperties} from './serializer/radius';
+import {shadowToCssClasses, shadowToCustomProperties} from './serializer/shadow';
+import {sizeToCustomProperties} from './serializer/size';
+import {spacingToCssClasses, spacingToCustomProperties} from './serializer/spacing';
+import {transitionToCssClasses, transitionToCustomProperties} from './serializer/transition';
+import {categoryFrom} from './util/category';
 
 export const cloudflightCssImplFormat: Format = {
     name: 'cloudflight/css-impl-format',
-    formatter({ dictionary }) {
+    formatter({dictionary}) {
         const category = categoryFrom(dictionary);
 
         return [

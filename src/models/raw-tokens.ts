@@ -71,7 +71,7 @@ export interface GradientProperty {
     value: {
         gradientType: string;
         rotation: number;
-        stops: { position: number; color: string }[];
+        stops: {position: number; color: string}[];
     };
 }
 

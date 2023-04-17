@@ -1,10 +1,10 @@
-import { DesignToken, Parser } from 'style-dictionary';
-import { tokenTypes } from '../models/token-types';
-import { ArrayElement } from '../util/array';
+import {DesignToken, Parser} from 'style-dictionary';
+import {tokenTypes} from '../models/token-types';
+import {ArrayElement} from '../util/array';
 
 export const jsonParser: Parser = {
     pattern: /\.json$/,
-    parse({ contents }) {
+    parse({contents}) {
         const parsedContent = JSON.parse(contents, (_key, value) => {
             switch (value?.type as ArrayElement<typeof tokenTypes>) {
                 case 'custom-shadow':

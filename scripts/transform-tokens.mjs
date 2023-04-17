@@ -1,4 +1,4 @@
-import { cloudflightPlatformConfigWith, registerItems } from '../dist/index.js';
+import {cloudflightPlatformConfigWith, registerItems} from '../dist/index.js';
 import StyleDictionary from 'style-dictionary';
 
 registerItems(StyleDictionary);

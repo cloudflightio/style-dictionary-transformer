@@ -19,10 +19,7 @@ The following dependencies are required:
 Create a javascript file with the following content:
 
 ```javascript
-import {
-    cloudflightPlatformConfigWith,
-    registerItems,
-} from '@cloudflight/style-dictionary-transformer';
+import {cloudflightPlatformConfigWith, registerItems} from '@cloudflight/style-dictionary-transformer';
 import StyleDictionary from 'style-dictionary';
 
 registerItems(StyleDictionary);

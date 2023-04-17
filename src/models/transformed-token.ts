@@ -1,4 +1,4 @@
-import { TransformedToken } from 'style-dictionary';
+import {TransformedToken} from 'style-dictionary';
 
 export interface TransformedColorToken extends TransformedToken {
     description?: string;
@@ -66,7 +66,7 @@ export interface TransformedGradientToken extends TransformedToken {
     value: {
         gradientType: string;
         rotation: string;
-        stops: { position: string; color: string }[];
+        stops: {position: string; color: string}[];
     };
 }
 

@@ -1,5 +1,5 @@
-import { Named, TransformGroup } from 'style-dictionary';
-import { tokenTransform } from '../transforms/token';
+import {Named, TransformGroup} from 'style-dictionary';
+import {tokenTransform} from '../transforms/token';
 
 export const customPropertiesTransformGroup: Named<TransformGroup> = {
     name: 'cloudflight/css-custom-properties',

@@ -1,4 +1,4 @@
-import { Named, Transform } from 'style-dictionary';
+import {Named, Transform} from 'style-dictionary';
 import tinycolor from 'tinycolor2';
 import {
     BorderProperty,
@@ -12,7 +12,7 @@ import {
     SpacingProperty,
     TransitionProperty,
 } from '../models/raw-tokens';
-import { tokenTypes } from '../models/token-types';
+import {tokenTypes} from '../models/token-types';
 import {
     TransformedBorderToken,
     TransformedColorToken,
@@ -25,7 +25,7 @@ import {
     TransformedSpacingToken,
     TransformedTransitionToken,
 } from '../models/transformed-token';
-import { ArrayElement } from '../util/array';
+import {ArrayElement} from '../util/array';
 
 const percentMultiplicator = 100;
 
@@ -140,19 +140,19 @@ function transformShadow(token: ShadowProperty): TransformedShadowToken['value']
 }
 
 function px(value: number): string {
-    return value !== 0 ? value + 'px' : '0';
+    return value !== 0 ? `${value}px` : '0';
 }
 
 function degree(value: number): string {
-    return value !== 0 ? value + 'deg' : '0';
+    return value !== 0 ? `${value}deg` : '0';
 }
 
 function percent(value: number): string {
-    return value !== 0 ? value + '%' : '0';
+    return value !== 0 ? `${value}%` : '0';
 }
 
 function seconds(value: number): string {
-    return value !== 0 ? value + 's' : '0';
+    return value !== 0 ? `${value}s` : '0';
 }
 
 function hex(value: string): string {

@@ -1,6 +1,6 @@
-import { radiusTokenEndings } from '../../models/token-endings';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {radiusTokenEndings} from '../../models/token-endings';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function radiusToCustomProperties(tokens: CategorizedTokens['radius']): string {
     return itemsFrom(tokens, (token) => {

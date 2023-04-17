@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
-import { within, userEvent } from '@storybook/testing-library';
+import type {Meta, StoryObj} from '@storybook/vue3';
+import {within, userEvent} from '@storybook/testing-library';
 import MyPage from './Page.vue';
 
 const meta = {
     title: 'Example/Page',
     component: MyPage,
     render: () => ({
-        components: { MyPage },
+        components: {MyPage},
         template: '<my-page />',
     }),
     parameters: {
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 // More on interaction testing: https://storybook.js.org/docs/7.0/vue/writing-tests/interaction-testing
 export const LoggedIn: Story = {
-    play: async ({ canvasElement }) => {
+    play: async ({canvasElement}) => {
         const canvas = within(canvasElement);
         // eslint-disable-next-line @typescript-eslint/await-thenable
         const loginButton = await canvas.getByRole('button', {

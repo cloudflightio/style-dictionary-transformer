@@ -1,7 +1,7 @@
-import { transitionTokenEndings } from '../../models/token-endings';
-import { TransformedTransitionToken } from '../../models/transformed-token';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {transitionTokenEndings} from '../../models/token-endings';
+import {TransformedTransitionToken} from '../../models/transformed-token';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function transitionToCustomProperties(tokens: CategorizedTokens['transition']): string {
     return itemsFrom(tokens, (token) => {

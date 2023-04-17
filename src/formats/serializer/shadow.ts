@@ -1,6 +1,6 @@
-import { shadowTokenEndings } from '../../models/token-endings';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {shadowTokenEndings} from '../../models/token-endings';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function shadowToCustomProperties(tokens: CategorizedTokens['shadow']): string {
     return itemsFrom(tokens, (token) => {

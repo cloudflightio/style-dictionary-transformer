@@ -1,6 +1,6 @@
-import { fontTokenEndings } from '../../models/token-endings';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { classFrom, itemsFrom, propertiesFrom } from '../util/serializer';
+import {fontTokenEndings} from '../../models/token-endings';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function fontToCustomProperties(tokens: CategorizedTokens['font']): string {
     return itemsFrom(tokens, (token) => {

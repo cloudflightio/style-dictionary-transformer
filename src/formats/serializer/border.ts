@@ -1,6 +1,6 @@
-import { borderTokenEndings } from '../../models/token-endings';
-import { CategorizedTokens } from '../models/categorized-tokens';
-import { itemsFrom, classFrom, propertiesFrom } from '../util/serializer';
+import {borderTokenEndings} from '../../models/token-endings';
+import {CategorizedTokens} from '../models/categorized-tokens';
+import {itemsFrom, classFrom, propertiesFrom} from '../util/serializer';
 
 export function borderToCustomProperties(tokens: CategorizedTokens['border']): string {
     return itemsFrom(tokens, (token) => {

@@ -8,8 +8,14 @@ import {scssUsingCustomPropertiesTransformGroup} from './transform-groups/scss-u
 import {tokenTransform} from './transforms/token';
 
 export interface CloudflightPlatformConfig {
-    styleDeclarationOutputDirectory: string;
-    styleImplOutputDirectory?: string;
+    declaration: {
+        outputDirectory: string;
+        outputFilename?: string;
+    };
+    implementation?: {
+        outputDirectory?: string;
+        outputFilename?: string;
+    };
 }
 
 export function registerItems(dictionary: StyleDictionary.Core): void {
@@ -27,8 +33,8 @@ export function registerItems(dictionary: StyleDictionary.Core): void {
 }
 
 export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig): Record<string, StyleDictionary.Platform> {
-    const declarationOutputDir = normalizeOutputDirectory(config.styleDeclarationOutputDirectory);
-    const implOutputDir = normalizeOutputDirectory(config.styleImplOutputDirectory ?? declarationOutputDir);
+    const declarationOutputDir = normalizeOutputDirectory(config.declaration.outputDirectory);
+    const implOutputDir = normalizeOutputDirectory(config.implementation?.outputDirectory ?? declarationOutputDir);
 
     return {
         css: {
@@ -39,7 +45,7 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
             },
             files: [
                 {
-                    destination: 'variables_impl.css',
+                    destination: config.implementation?.outputFilename ?? 'variables_impl.css',
                     format: cloudflightCssImplFormat.name,
                     filter: cloudflightFilter.name,
                 },
@@ -53,7 +59,7 @@ export function cloudflightPlatformConfigWith(config: CloudflightPlatformConfig)
             },
             files: [
                 {
-                    destination: 'variables.scss',
+                    destination: config.declaration.outputFilename ?? 'variables.scss',
                     format: cloudflightScssVarFormat.name,
                     filter: cloudflightFilter.name,
                 },

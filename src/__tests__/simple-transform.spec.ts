@@ -15,7 +15,9 @@ describe('transformations', () => {
             source: [`test-data/${kind}-transform/design-tokens.json`],
             platforms: {
                 ...cloudflightPlatformConfigWith({
-                    styleDeclarationOutputDirectory: `test-data/${kind}-transform/actual`,
+                    declaration: {
+                        outputDirectory: `test-data/${kind}-transform/actual`,
+                    },
                 }),
             },
         });

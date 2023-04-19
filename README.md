@@ -28,7 +28,9 @@ const StyleDictionaryExtended = StyleDictionary.extend({
     source: ['assets/design-tokens/*.json'],
     platforms: {
         ...cloudflightPlatformConfigWith({
-            styleDeclarationOutputDirectory: '<your-output-directory>',
+            declaration: {
+                outputDirectory: '<your-output-directory>',
+            },
         }),
     },
 });

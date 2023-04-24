@@ -30,6 +30,8 @@ export const jsonParser: Parser = {
                 ...parsedContent.opacities,
                 ...parsedContent.opacity,
             },
+            // use the font property instead
+            typography: undefined,
         };
     },
 };

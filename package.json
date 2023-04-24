@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/style-dictionary-transformer",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Cloudflight style dictionary transformer for SCSS",
     "main": "./dist/index.js",
     "author": "Cloudflight GmbH",

@@ -19,7 +19,7 @@ export function fontToCustomProperties(tokens: CategorizedTokens['font']): strin
     });
 }
 
-export function fontToCssClasses(tokens: CategorizedTokens['font']): string {
+export function fontToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['font']): string {
     return itemsFrom(tokens, (token) => {
         return classFrom(token.name, [
             `font-family: var(--${token.name}${fontTokenEndings.fontFamily});`,
@@ -36,7 +36,7 @@ export function fontToCssClasses(tokens: CategorizedTokens['font']): string {
     });
 }
 
-export function fontToScssVariables(tokens: CategorizedTokens['font']): string {
+export function fontToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['font']): string {
     return itemsFrom(tokens, (token) => [
         `$${token.name}${fontTokenEndings.fontSize}: var(--${token.name}${fontTokenEndings.fontSize});`,
         `$${token.name}${fontTokenEndings.textDecoration}: var(--${token.name}${fontTokenEndings.textDecoration});`,
@@ -48,5 +48,37 @@ export function fontToScssVariables(tokens: CategorizedTokens['font']): string {
         `$${token.name}${fontTokenEndings.lineHeight}: var(--${token.name}${fontTokenEndings.lineHeight});`,
         `$${token.name}${fontTokenEndings.paragraphIndent}: var(--${token.name}${fontTokenEndings.paragraphIndent});`,
         `$${token.name}${fontTokenEndings.textCase}: var(--${token.name}${fontTokenEndings.textCase});`,
+    ]);
+}
+
+export function fontToCssClasses(tokens: CategorizedTokens['font']): string {
+    return itemsFrom(tokens, (token) => {
+        return classFrom(token.name, [
+            `font-family: $${token.name}${fontTokenEndings.fontFamily};`,
+            `font-size: $${token.name}${fontTokenEndings.fontSize};`,
+            `font-stretch: $${token.name}${fontTokenEndings.fontStretch};`,
+            `font-style: $${token.name}${fontTokenEndings.fontStyle};`,
+            `font-weight: $${token.name}${fontTokenEndings.fontWeight};`,
+            `letter-spacing: $${token.name}${fontTokenEndings.letterSpacing};`,
+            `line-height: $${token.name}${fontTokenEndings.lineHeight};`,
+            `text-indent: $${token.name}${fontTokenEndings.paragraphIndent};`,
+            `text-transform: $${token.name}${fontTokenEndings.textCase};`,
+            `text-decoration: $${token.name}${fontTokenEndings.textDecoration};`,
+        ]);
+    });
+}
+
+export function fontToScssVariables(tokens: CategorizedTokens['font']): string {
+    return itemsFrom(tokens, (token) => [
+        `$${token.name}${fontTokenEndings.fontSize}: ${token.value.fontSize} !default;`,
+        `$${token.name}${fontTokenEndings.textDecoration}: ${token.value.textDecoration} !default;`,
+        `$${token.name}${fontTokenEndings.fontFamily}: ${token.value.fontFamily} !default;`,
+        `$${token.name}${fontTokenEndings.fontWeight}: ${token.value.fontWeight} !default;`,
+        `$${token.name}${fontTokenEndings.fontStyle}: ${token.value.fontStyle} !default;`,
+        `$${token.name}${fontTokenEndings.fontStretch}: ${token.value.fontStretch} !default;`,
+        `$${token.name}${fontTokenEndings.letterSpacing}: ${token.value.letterSpacing} !default;`,
+        `$${token.name}${fontTokenEndings.lineHeight}: ${token.value.lineHeight} !default;`,
+        `$${token.name}${fontTokenEndings.paragraphIndent}: ${token.value.paragraphIndent} !default;`,
+        `$${token.name}${fontTokenEndings.textCase}: ${token.value.textCase} !default;`,
     ]);
 }

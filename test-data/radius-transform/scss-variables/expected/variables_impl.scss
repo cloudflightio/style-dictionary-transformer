@@ -1,0 +1,12 @@
+.radius-equal {
+    border-top-left-radius: $radius-equal-top-left;
+    border-top-right-radius: $radius-equal-top-right;
+    border-bottom-left-radius: $radius-equal-bottom-left;
+    border-bottom-right-radius: $radius-equal-bottom-right;
+}
+.radius-mixed {
+    border-top-left-radius: $radius-mixed-top-left;
+    border-top-right-radius: $radius-mixed-top-right;
+    border-bottom-left-radius: $radius-mixed-bottom-left;
+    border-bottom-right-radius: $radius-mixed-bottom-right;
+}

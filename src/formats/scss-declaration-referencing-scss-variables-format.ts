@@ -11,8 +11,8 @@ import {spacingToScssVariables} from './serializer/spacing';
 import {transitionToScssVariables} from './serializer/transition';
 import {categoryFrom} from './util/category';
 
-export const cloudflightScssVarFormat: Format = {
-    name: 'cloudflight/scss-var-format',
+export const scssDeclarationReferencingScssVariablesFormat: Format = {
+    name: 'cloudflight/scss-declaration-referencing-scss-variables-format',
     formatter({dictionary}) {
         const category = categoryFrom(dictionary);
 

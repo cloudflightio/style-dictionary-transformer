@@ -12,7 +12,7 @@ export function transitionToCustomProperties(tokens: CategorizedTokens['transiti
     });
 }
 
-export function transitionToCssClasses(tokens: CategorizedTokens['transition']): string {
+export function transitionToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['transition']): string {
     return itemsFrom(tokens, (token) => {
         return classFrom(token.name, [
             `transition-duration: var(--${token.name}${transitionTokenEndings.duration});`,
@@ -21,10 +21,26 @@ export function transitionToCssClasses(tokens: CategorizedTokens['transition']):
     });
 }
 
-export function transitionToScssVariables(tokens: CategorizedTokens['transition']): string {
+export function transitionToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['transition']): string {
     return itemsFrom(tokens, (token) => [
         `$${token.name}${transitionTokenEndings.duration}: var(--${token.name}${transitionTokenEndings.duration});`,
         `$${token.name}${transitionTokenEndings.timingFunction}: var(--${token.name}${transitionTokenEndings.timingFunction});`,
+    ]);
+}
+
+export function transitionToCssClasses(tokens: CategorizedTokens['transition']): string {
+    return itemsFrom(tokens, (token) => {
+        return classFrom(token.name, [
+            `transition-duration: $${token.name}${transitionTokenEndings.duration};`,
+            `transition-timing-function: $${token.name}${transitionTokenEndings.timingFunction};`,
+        ]);
+    });
+}
+
+export function transitionToScssVariables(tokens: CategorizedTokens['transition']): string {
+    return itemsFrom(tokens, (token) => [
+        `$${token.name}${transitionTokenEndings.duration}: ${token.value.duration} !default;`,
+        `$${token.name}${transitionTokenEndings.timingFunction}: ${timingFunctionFrom(token)} !default;`,
     ]);
 }
 

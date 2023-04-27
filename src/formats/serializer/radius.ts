@@ -13,7 +13,7 @@ export function radiusToCustomProperties(tokens: CategorizedTokens['radius']): s
     });
 }
 
-export function radiusToCssClasses(tokens: CategorizedTokens['radius']): string {
+export function radiusToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['radius']): string {
     return itemsFrom(tokens, (token) => {
         return classFrom(token.name, [
             `border-top-left-radius: var(--${token.name}${radiusTokenEndings.topLeft});`,
@@ -24,11 +24,31 @@ export function radiusToCssClasses(tokens: CategorizedTokens['radius']): string 
     });
 }
 
-export function radiusToScssVariables(tokens: CategorizedTokens['radius']): string {
+export function radiusToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['radius']): string {
     return itemsFrom(tokens, (token) => [
         `$${token.name}${radiusTokenEndings.topLeft}: var(--${token.name}${radiusTokenEndings.topLeft});`,
         `$${token.name}${radiusTokenEndings.topRight}: var(--${token.name}${radiusTokenEndings.topRight});`,
         `$${token.name}${radiusTokenEndings.bottomLeft}: var(--${token.name}${radiusTokenEndings.bottomLeft});`,
         `$${token.name}${radiusTokenEndings.bottomRight}: var(--${token.name}${radiusTokenEndings.bottomRight});`,
+    ]);
+}
+
+export function radiusToCssClasses(tokens: CategorizedTokens['radius']): string {
+    return itemsFrom(tokens, (token) => {
+        return classFrom(token.name, [
+            `border-top-left-radius: $${token.name}${radiusTokenEndings.topLeft};`,
+            `border-top-right-radius: $${token.name}${radiusTokenEndings.topRight};`,
+            `border-bottom-left-radius: $${token.name}${radiusTokenEndings.bottomLeft};`,
+            `border-bottom-right-radius: $${token.name}${radiusTokenEndings.bottomRight};`,
+        ]);
+    });
+}
+
+export function radiusToScssVariables(tokens: CategorizedTokens['radius']): string {
+    return itemsFrom(tokens, (token) => [
+        `$${token.name}${radiusTokenEndings.topLeft}: ${token.value.topLeft} !default;`,
+        `$${token.name}${radiusTokenEndings.topRight}: ${token.value.topRight} !default;`,
+        `$${token.name}${radiusTokenEndings.bottomLeft}: ${token.value.bottomLeft} !default;`,
+        `$${token.name}${radiusTokenEndings.bottomRight}: ${token.value.bottomRight} !default;`,
     ]);
 }

@@ -5,6 +5,10 @@ export function colorToCustomProperties(tokens: CategorizedTokens['color']): str
     return itemsFrom(tokens, (token) => `    --${token.name}: ${token.value};`);
 }
 
-export function colorToScssVariables(tokens: CategorizedTokens['color']): string {
+export function colorToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['color']): string {
     return itemsFrom(tokens, (token) => `$${token.name}: var(--${token.name});`);
+}
+
+export function colorToScssVariables(tokens: CategorizedTokens['color']): string {
+    return itemsFrom(tokens, (token) => `$${token.name}: ${token.value} !default;`);
 }

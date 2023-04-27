@@ -5,6 +5,10 @@ export function sizeToCustomProperties(tokens: CategorizedTokens['size']): strin
     return itemsFrom(tokens, (token) => `    --${token.name}: ${token.value};`);
 }
 
-export function sizeToScssVariables(tokens: CategorizedTokens['size']): string {
+export function sizeToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['size']): string {
     return itemsFrom(tokens, (token) => `$${token.name}: var(--${token.name});`);
+}
+
+export function sizeToScssVariables(tokens: CategorizedTokens['size']): string {
+    return itemsFrom(tokens, (token) => `$${token.name}: ${token.value} !default;`);
 }

@@ -1,0 +1,21 @@
+.gradient-gradient-single-with-multiple-color-stops {
+    background: radial-gradient(
+        $gradient-gradient-single-with-multiple-color-stops-0-step-color $gradient-gradient-single-with-multiple-color-stops-0-step-position,
+        $gradient-gradient-single-with-multiple-color-stops-1-step-color $gradient-gradient-single-with-multiple-color-stops-1-step-position,
+        $gradient-gradient-single-with-multiple-color-stops-2-step-color $gradient-gradient-single-with-multiple-color-stops-2-step-position,
+        $gradient-gradient-single-with-multiple-color-stops-3-step-color $gradient-gradient-single-with-multiple-color-stops-3-step-position
+    );
+}
+.gradient-gradient-multiplegrad-0 {
+    background: linear-gradient(
+        $gradient-gradient-multiplegrad-0-rotation,
+        $gradient-gradient-multiplegrad-0-0-step-color $gradient-gradient-multiplegrad-0-0-step-position,
+        $gradient-gradient-multiplegrad-0-1-step-color $gradient-gradient-multiplegrad-0-1-step-position
+    );
+}
+.gradient-gradient-multiplegrad-1 {
+    background: radial-gradient(
+        $gradient-gradient-multiplegrad-1-0-step-color $gradient-gradient-multiplegrad-1-0-step-position,
+        $gradient-gradient-multiplegrad-1-1-step-color $gradient-gradient-multiplegrad-1-1-step-position
+    );
+}

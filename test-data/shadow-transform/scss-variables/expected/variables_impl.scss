@@ -1,0 +1,6 @@
+.effect-drop-shadow-single {
+    filter: drop-shadow(
+        $effect-drop-shadow-single-offset-x $effect-drop-shadow-single-offset-y $effect-drop-shadow-single-radius
+            $effect-drop-shadow-single-color
+    );
+}

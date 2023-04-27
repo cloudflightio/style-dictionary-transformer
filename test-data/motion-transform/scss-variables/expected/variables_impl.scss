@@ -1,0 +1,20 @@
+.motion-slide {
+    transition-duration: $motion-slide-duration;
+    transition-timing-function: $motion-slide-timing-function;
+}
+.motion-move-in {
+    transition-duration: $motion-move-in-duration;
+    transition-timing-function: $motion-move-in-timing-function;
+}
+.motion-dissolve {
+    transition-duration: $motion-dissolve-duration;
+    transition-timing-function: $motion-dissolve-timing-function;
+}
+.motion-smart {
+    transition-duration: $motion-smart-duration;
+    transition-timing-function: $motion-smart-timing-function;
+}
+.motion-push {
+    transition-duration: $motion-push-duration;
+    transition-timing-function: $motion-push-timing-function;
+}

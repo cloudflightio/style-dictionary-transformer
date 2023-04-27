@@ -237,5 +237,5 @@ dist
 **/dist/
 .idea/
 stories/assets/styling
-test-data/*/actual
+test-data/*/*/actual
 storybook-static/

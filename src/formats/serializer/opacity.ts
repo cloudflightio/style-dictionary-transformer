@@ -5,6 +5,10 @@ export function opacityToCustomProperties(tokens: CategorizedTokens['opacity']):
     return itemsFrom(tokens, (token) => `    --${token.name}: ${token.value};`);
 }
 
-export function opacityToScssVariables(tokens: CategorizedTokens['opacity']): string {
+export function opacityToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['opacity']): string {
     return itemsFrom(tokens, (token) => `$${token.name}: var(--${token.name});`);
+}
+
+export function opacityToScssVariables(tokens: CategorizedTokens['opacity']): string {
+    return itemsFrom(tokens, (token) => `$${token.name}: ${token.value} !default;`);
 }

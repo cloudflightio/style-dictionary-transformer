@@ -5,18 +5,21 @@ import {readFileMinified} from '../test-util/read-file-minified';
 
 const kinds = ['color', 'size', 'radius', 'opacity', 'border', 'spacing', 'font', 'motion', 'gradient', 'shadow'];
 
-describe('transformations', () => {
+describe('when transforming', () => {
     beforeAll(() => {
         registerItems(StyleDictionary);
     });
 
-    test.each(kinds)('given %s when transforming then transforms properly', (kind) => {
+    test.each(kinds)('given %s and custom properties as format then transforms properly', (kind) => {
         const StyleDictionaryExtended = StyleDictionary.extend({
             source: [`test-data/${kind}-transform/design-tokens.json`],
             platforms: {
                 ...cloudflightPlatformConfigWith({
-                    declaration: {
-                        outputDirectory: `test-data/${kind}-transform/actual`,
+                    web: {
+                        format: 'with-custom-properties',
+                        declaration: {
+                            outputDirectory: `test-data/${kind}-transform/custom-properties/actual`,
+                        },
                     },
                 }),
             },
@@ -24,11 +27,38 @@ describe('transformations', () => {
 
         StyleDictionaryExtended.buildAllPlatforms();
 
-        const expectedImpl = readFileMinified(`test-data/${kind}-transform/expected/variables_impl.css`);
-        const expectedDecl = readFileMinified(`test-data/${kind}-transform/expected/variables.scss`);
+        const expectedImpl = readFileMinified(`test-data/${kind}-transform/custom-properties/expected/variables_impl.scss`);
+        const expectedDecl = readFileMinified(`test-data/${kind}-transform/custom-properties/expected/variables.scss`);
 
-        const actualImpl = readFileMinified(`test-data/${kind}-transform/actual/variables_impl.css`);
-        const actualDecl = readFileMinified(`test-data/${kind}-transform/actual/variables.scss`);
+        const actualImpl = readFileMinified(`test-data/${kind}-transform/custom-properties/actual/variables_impl.scss`);
+        const actualDecl = readFileMinified(`test-data/${kind}-transform/custom-properties/actual/variables.scss`);
+
+        expect(actualImpl).toEqual(expectedImpl);
+        expect(actualDecl).toEqual(expectedDecl);
+    });
+
+    test.each(kinds)('given %s and scss variables as format then transforms properly', (kind) => {
+        const StyleDictionaryExtended = StyleDictionary.extend({
+            source: [`test-data/${kind}-transform/design-tokens.json`],
+            platforms: {
+                ...cloudflightPlatformConfigWith({
+                    web: {
+                        format: 'with-scss-variables',
+                        declaration: {
+                            outputDirectory: `test-data/${kind}-transform/scss-variables/actual`,
+                        },
+                    },
+                }),
+            },
+        });
+
+        StyleDictionaryExtended.buildAllPlatforms();
+
+        const expectedImpl = readFileMinified(`test-data/${kind}-transform/scss-variables/expected/variables_impl.scss`);
+        const expectedDecl = readFileMinified(`test-data/${kind}-transform/scss-variables/expected/variables.scss`);
+
+        const actualImpl = readFileMinified(`test-data/${kind}-transform/scss-variables/actual/variables_impl.scss`);
+        const actualDecl = readFileMinified(`test-data/${kind}-transform/scss-variables/actual/variables.scss`);
 
         expect(actualImpl).toEqual(expectedImpl);
         expect(actualDecl).toEqual(expectedDecl);

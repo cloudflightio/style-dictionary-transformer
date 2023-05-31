@@ -25,7 +25,7 @@
     },
     "scripts": {
         "build": "tsc --project tsconfig.app.json",
-        "lint": "eslint . --ignore-path .gitignore",
+        "lint": "eslint . --ignore-path .gitignore && prettier --check .",
         "test": "jest",
         "prepare": "husky install",
         "generate-tokens": "ts-node scripts/transform-tokens.mjs",

@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 7
+  version: 6
   cacheKey: 9
 
 "@ampproject/remapping@npm:^2.2.0":
@@ -1645,12 +1645,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflight/prettier-config@npm:0.15.0":
-  version: 0.15.0
-  resolution: "@cloudflight/prettier-config@npm:0.15.0"
+"@cloudflight/prettier-config@npm:0.15.1":
+  version: 0.15.1
+  resolution: "@cloudflight/prettier-config@npm:0.15.1"
   peerDependencies:
     prettier: ">=2.0.0 <3.0.0"
-  checksum: b78a79a02ad930bcf3e9a0a6655b489e62728674990dc0350c2bde84634d97efb9bbf4641d1b8144eba4ff18fc9181cc401fec6c968558bc3b73864484c8ce43
+  checksum: 8/fb4bc7d1f88831a85825f2533b281142356e3f79f7dd6e6749fb51198d9606b025b87c3ec55228a3bda881a2b3c26aa7fe635ca9cd10264256f96c63c2f88b29
   languageName: node
   linkType: hard
 
@@ -1658,37 +1658,37 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/style-dictionary-transformer@workspace:."
   dependencies:
-    "@cloudflight/eslint-plugin-typescript": "npm:0.15.0"
-    "@cloudflight/prettier-config": "npm:0.15.0"
-    "@jest/globals": "npm:29.5.0"
-    "@rushstack/eslint-patch": "npm:1.2.0"
-    "@storybook/addon-essentials": "npm:7.0.7"
-    "@storybook/addon-interactions": "npm:7.0.7"
-    "@storybook/addon-links": "npm:7.0.7"
-    "@storybook/blocks": "npm:7.0.7"
-    "@storybook/testing-library": "npm:0.1.0"
-    "@storybook/vue3": "npm:7.0.7"
-    "@storybook/vue3-vite": "npm:7.0.7"
-    "@types/node": "npm:18.16.3"
-    "@types/tinycolor2": "npm:^1.4.3"
-    eslint: "npm:8.39.0"
-    eslint-plugin-storybook: "npm:0.6.11"
-    husky: "npm:8.0.3"
-    immer: "npm:^10.0.1"
-    jest: "npm:29.5.0"
-    lint-staged: "npm:13.2.2"
-    prettier: "npm:2.8.8"
-    react: "npm:18.2.0"
-    react-dom: "npm:18.2.0"
-    sass: "npm:1.62.1"
-    storybook: "npm:7.0.7"
-    style-dictionary: "npm:3.8.0"
-    tinycolor2: "npm:1.6.0"
-    ts-jest: "npm:29.1.0"
-    ts-node: "npm:10.9.1"
-    typescript: "npm:5.0.4"
-    vite: "npm:4.3.4"
-    vue: "npm:3.2.47"
+    "@cloudflight/eslint-plugin-typescript": 0.15.0
+    "@cloudflight/prettier-config": 0.15.1
+    "@jest/globals": 29.5.0
+    "@rushstack/eslint-patch": 1.2.0
+    "@storybook/addon-essentials": 7.0.7
+    "@storybook/addon-interactions": 7.0.7
+    "@storybook/addon-links": 7.0.7
+    "@storybook/blocks": 7.0.7
+    "@storybook/testing-library": 0.1.0
+    "@storybook/vue3": 7.0.7
+    "@storybook/vue3-vite": 7.0.7
+    "@types/node": 18.16.3
+    "@types/tinycolor2": ^1.4.3
+    eslint: 8.39.0
+    eslint-plugin-storybook: 0.6.11
+    husky: 8.0.3
+    immer: ^10.0.1
+    jest: 29.5.0
+    lint-staged: 13.2.2
+    prettier: 2.8.8
+    react: 18.2.0
+    react-dom: 18.2.0
+    sass: 1.62.1
+    storybook: 7.0.7
+    style-dictionary: 3.8.0
+    tinycolor2: 1.6.0
+    ts-jest: 29.1.0
+    ts-node: 10.9.1
+    typescript: 5.0.4
+    vite: 4.3.4
+    vue: 3.2.47
   languageName: unknown
   linkType: soft
 
@@ -6911,9 +6911,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@npm%3A^2.3.2#optional!builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>":
+"fsevents@patch:fsevents@npm%3A^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -10609,16 +10609,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.6#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.15.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#optional!builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: a6f214b97d932445796f78dab7a898ec78966327e0d6cb571f90b6ac0f3b3347bf6bab0a071d899bfdc316b26ed845f6655310b38b8f6ee4da5272a0c5ecef85
+  checksum: 8/5656f4d0bedcf8eb52685c1abdf8fbe73a1603bb1160a24d716e27a57f6cecbe2432ff9c89c2bd57542c3a7b9d14b1882b73bfe2e9d7849c9a4c0b8b39f02b8b
   languageName: node
   linkType: hard
 
@@ -11806,13 +11806,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@5.0.4#~builtin<compat/typescript>":
   version: 5.0.4
-  resolution: "typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>::version=5.0.4&hash=1f5320"
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: be94f10d96a8443e5524bce56705712ae1aa6c67618dd2c316ddb616ea614a3eb675c34e4af16ab09f1a0ab694173c704ba5b23d8b8bda31cb31c1ca078c486f
+  checksum: 8/bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
   languageName: node
   linkType: hard
 

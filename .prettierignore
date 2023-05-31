@@ -1,0 +1,5 @@
+dist
+.idea
+storybook-static
+.yarn
+stories/assets/styling

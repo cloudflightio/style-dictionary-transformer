@@ -44,7 +44,7 @@
         "@storybook/testing-library": "0.1.0",
         "@storybook/vue3": "7.0.18",
         "@storybook/vue3-vite": "7.0.18",
-        "@types/node": "18.16.16",
+        "@types/node": "20.2.5",
         "@types/tinycolor2": "^1.4.3",
         "eslint": "8.41.0",
         "eslint-plugin-storybook": "0.6.12",

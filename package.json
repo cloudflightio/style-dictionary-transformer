@@ -27,7 +27,7 @@
         "build": "tsc --project tsconfig.app.json",
         "lint": "eslint . --ignore-path .gitignore && prettier --check .",
         "test": "jest",
-        "prepare": "husky install",
+        "prepare": "husky install && git update-index --chmod=+x ./.husky/pre-commit",
         "generate-tokens": "ts-node scripts/transform-tokens.mjs",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"

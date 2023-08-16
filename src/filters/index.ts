@@ -11,5 +11,5 @@ export const cloudflightFilter: Named<Filter> = {
 };
 
 function filterForAllowedTypes(token: TransformedToken): boolean {
-    return tokenTypes.includes(token['type']);
+    return tokenTypes.some((item) => item === token['type']);
 }

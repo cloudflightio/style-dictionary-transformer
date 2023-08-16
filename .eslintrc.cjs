@@ -11,4 +11,13 @@ module.exports = {
     rules: {
         '@cloudflight/typescript/package-force-absolute-version-dependencies': 'off',
     },
+    overrides: [
+        {
+            files: ['*.stories.ts'],
+            rules: {
+                // vuejs components are somehow considered to have the type any
+                '@typescript-eslint/no-unsafe-assignment': 'off',
+            },
+        },
+    ],
 };

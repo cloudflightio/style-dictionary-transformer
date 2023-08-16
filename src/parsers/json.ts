@@ -1,12 +1,18 @@
-import {DesignToken, Parser} from 'style-dictionary';
+import {DesignToken, DesignTokens, Parser} from 'style-dictionary';
 import {tokenTypes} from '../models/token-types';
 import {ArrayElement} from '../util/array';
 
 export const jsonParser: Parser = {
     pattern: /\.json$/,
     parse({contents}) {
-        const parsedContent = JSON.parse(contents, (_key, value) => {
-            switch (value?.type as ArrayElement<typeof tokenTypes>) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const parsedContent: DesignTokens = JSON.parse(contents, (_key, value: unknown) => {
+            if (!isPotentialDesignToken(value)) {
+                return value;
+            }
+
+            // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+            switch (value['type'] as ArrayElement<typeof tokenTypes>) {
                 case 'custom-shadow':
                     return shadowFilter(value);
                 case 'custom-gradient':
@@ -20,30 +26,55 @@ export const jsonParser: Parser = {
 
         return {
             ...parsedContent,
-            radii: undefined,
+            // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+            radii: undefined as unknown as DesignToken,
             radius: {
-                ...parsedContent.radii,
-                ...parsedContent.radius,
+                ...parsedContent['radii'],
+                ...parsedContent['radius'],
             },
-            opacities: undefined,
+            // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+            opacities: undefined as unknown as DesignToken,
             opacity: {
-                ...parsedContent.opacities,
-                ...parsedContent.opacity,
+                ...parsedContent['opacities'],
+                ...parsedContent['opacity'],
             },
             // use the font property instead
-            typography: undefined,
+            // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+            typography: undefined as unknown as DesignToken,
         };
     },
 };
 
 function shadowFilter(token: DesignToken): DesignToken | undefined {
-    return token.value.shadowType === 'dropShadow' ? token : undefined;
+    const value: unknown = token.value;
+
+    if (typeof value !== 'object' || value == null || !('shadowType' in value)) {
+        return undefined;
+    }
+
+    return value.shadowType === 'dropShadow' ? token : undefined;
 }
 
 function transitionFilter(token: DesignToken): DesignToken | undefined {
-    return token.value.easingType === 'cubicBezier' ? token : undefined;
+    const value: unknown = token.value;
+
+    if (typeof value !== 'object' || value == null || !('easingType' in value)) {
+        return undefined;
+    }
+
+    return value.easingType === 'cubicBezier' ? token : undefined;
 }
 
 function gradientFilter(token: DesignToken): DesignToken | undefined {
-    return token.value.gradientType === 'linear' || token.value.gradientType === 'radial' ? token : undefined;
+    const value: unknown = token.value;
+
+    if (typeof value !== 'object' || value == null || !('gradientType' in value)) {
+        return undefined;
+    }
+
+    return value.gradientType === 'linear' || value.gradientType === 'radial' ? token : undefined;
+}
+
+function isPotentialDesignToken(value: unknown): value is DesignToken {
+    return typeof value === 'object' && value != null;
 }

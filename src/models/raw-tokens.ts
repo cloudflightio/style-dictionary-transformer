@@ -1,3 +1,6 @@
+import {ArrayElement} from '../util/array';
+import {tokenTypes} from './token-types';
+
 export interface ColorProperty {
     description?: string;
     type: 'color';
@@ -109,4 +112,25 @@ export interface TransitionProperty {
             y2: number;
         };
     };
+}
+
+type RelevantProperty =
+    | ColorProperty
+    | SizeProperty
+    | RadiusProperty
+    | BorderProperty
+    | SpacingProperty
+    | FontProperty
+    | GradientProperty
+    | OpacityProperty
+    | ShadowProperty
+    | TransitionProperty;
+
+export function isRelevantProperty(value: unknown): value is RelevantProperty {
+    if (typeof value !== 'object' || value == null) {
+        return false;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return 'type' in value && typeof value.type === 'string' && tokenTypes.includes(value.type as ArrayElement<typeof tokenTypes>);
 }

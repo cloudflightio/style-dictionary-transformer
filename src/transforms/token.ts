@@ -5,6 +5,7 @@ import {
     ColorProperty,
     FontProperty,
     GradientProperty,
+    isRelevantProperty,
     OpacityProperty,
     RadiusProperty,
     ShadowProperty,
@@ -25,7 +26,6 @@ import {
     TransformedSpacingToken,
     TransformedTransitionToken,
 } from '../models/transformed-token';
-import {ArrayElement} from '../util/array';
 
 const percentMultiplicator = 100;
 
@@ -34,27 +34,31 @@ export const tokenTransform: Named<Transform> = {
     type: 'value',
     matcher: (token) => tokenTypes.includes(token['type']),
     transformer(token) {
-        switch (token['type'] as ArrayElement<typeof tokenTypes>) {
+        if (!isRelevantProperty(token)) {
+            throw new Error('Unsupported token has been passed.');
+        }
+
+        switch (token.type) {
             case 'color':
-                return transformColor(token as unknown as ColorProperty);
+                return transformColor(token);
             case 'dimension':
-                return transformSize(token as unknown as SizeProperty);
+                return transformSize(token);
             case 'custom-radius':
-                return transformRadius(token as unknown as RadiusProperty);
+                return transformRadius(token);
             case 'custom-stroke':
-                return transformBorder(token as unknown as BorderProperty);
+                return transformBorder(token);
             case 'custom-spacing':
-                return transformSpacing(token as unknown as SpacingProperty);
+                return transformSpacing(token);
             case 'custom-opacity':
-                return transformOpacity(token as unknown as OpacityProperty);
+                return transformOpacity(token);
             case 'custom-fontStyle':
-                return transformFont(token as unknown as FontProperty);
+                return transformFont(token);
             case 'custom-gradient':
-                return transformGradient(token as unknown as GradientProperty);
+                return transformGradient(token);
             case 'custom-transition':
-                return transformTransition(token as unknown as TransitionProperty);
+                return transformTransition(token);
             case 'custom-shadow':
-                return transformShadow(token as unknown as ShadowProperty);
+                return transformShadow(token);
         }
     },
 };

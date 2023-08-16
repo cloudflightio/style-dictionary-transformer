@@ -22,5 +22,5 @@ export function normalizedConfigOf(config: CloudflightPlatformConfig): Normalize
 }
 
 function normalizeOutputDirectory(path: string): string {
-    return path.endsWith('/') ? path : path + '/';
+    return path.endsWith('/') ? path : `${path}/`;
 }

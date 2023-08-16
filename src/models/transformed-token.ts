@@ -1,4 +1,6 @@
 import {TransformedToken} from 'style-dictionary';
+import {ArrayElement} from '../util/array';
+import {tokenTypes} from './token-types';
 
 export interface TransformedColorToken extends TransformedToken {
     description?: string;
@@ -100,4 +102,21 @@ export interface TransformedTransitionToken extends TransformedToken {
             y2: number;
         };
     };
+}
+
+type ExtendedTransformedToken =
+    | TransformedColorToken
+    | TransformedSizeToken
+    | TransformedRadiusToken
+    | TransformedBorderToken
+    | TransformedSpacingToken
+    | TransformedFontToken
+    | TransformedGradientToken
+    | TransformedOpacityToken
+    | TransformedShadowToken
+    | TransformedTransitionToken;
+
+export function isExtendedTransformedToken(value: TransformedToken): value is ExtendedTransformedToken {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return 'type' in value && typeof value['type'] === 'string' && tokenTypes.includes(value['type'] as ArrayElement<typeof tokenTypes>);
 }

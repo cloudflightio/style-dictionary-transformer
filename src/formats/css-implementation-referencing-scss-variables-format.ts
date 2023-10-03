@@ -1,4 +1,5 @@
 import {Format} from 'style-dictionary';
+
 import {borderToCssClasses} from './serializer/border';
 import {fontToCssClasses} from './serializer/font';
 import {gradientToCssClasses} from './serializer/gradient';

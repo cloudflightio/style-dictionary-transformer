@@ -1,5 +1,6 @@
 import {Named, Transform} from 'style-dictionary';
 import tinycolor from 'tinycolor2';
+
 import {
     BorderProperty,
     ColorProperty,

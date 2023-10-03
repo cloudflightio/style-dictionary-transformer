@@ -4,17 +4,13 @@ import {CategorizedTokens} from '../models/categorized-tokens';
 import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function gradientToCustomProperties(tokens: CategorizedTokens['gradient']): string {
-    return itemsFrom(tokens, (token) => {
-        return propertiesFrom([
-            `--${token.name}${gradientTokenEndings.rotation}: ${token.value.rotation};`,
-            ...token.value.stops.flatMap((step, index) => {
-                return [
-                    `--${token.name}-${index}${gradientTokenEndings.stepPosition}: ${step.position};`,
-                    `--${token.name}-${index}${gradientTokenEndings.stepColor}: ${step.color};`,
-                ];
-            }),
-        ]);
-    });
+    return itemsFrom(tokens, (token) => propertiesFrom([
+        `--${token.name}${gradientTokenEndings.rotation}: ${token.value.rotation};`,
+        ...token.value.stops.flatMap((step, index) => [
+            `--${token.name}-${index}${gradientTokenEndings.stepPosition}: ${step.position};`,
+            `--${token.name}-${index}${gradientTokenEndings.stepColor}: ${step.color};`,
+        ]),
+    ]));
 }
 
 export function gradientToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['gradient']): string {
@@ -31,17 +27,13 @@ export function gradientToCssClassesReferencingCustomProperties(tokens: Categori
 }
 
 export function gradientToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['gradient']): string {
-    return itemsFrom(tokens, (token) => {
-        return [
-            `$${token.name}${gradientTokenEndings.rotation}: var(--${token.name}${gradientTokenEndings.rotation});`,
-            ...token.value.stops.flatMap((_step, index) => {
-                return [
-                    `$${token.name}-${index}${gradientTokenEndings.stepPosition}: var(--${token.name}-${index}${gradientTokenEndings.stepPosition});`,
-                    `$${token.name}-${index}${gradientTokenEndings.stepColor}: var(--${token.name}-${index}${gradientTokenEndings.stepColor});`,
-                ];
-            }),
-        ];
-    });
+    return itemsFrom(tokens, (token) => [
+        `$${token.name}${gradientTokenEndings.rotation}: var(--${token.name}${gradientTokenEndings.rotation});`,
+        ...token.value.stops.flatMap((_step, index) => [
+            `$${token.name}-${index}${gradientTokenEndings.stepPosition}: var(--${token.name}-${index}${gradientTokenEndings.stepPosition});`,
+            `$${token.name}-${index}${gradientTokenEndings.stepColor}: var(--${token.name}-${index}${gradientTokenEndings.stepColor});`,
+        ]),
+    ]);
 }
 
 export function gradientToCssClasses(tokens: CategorizedTokens['gradient']): string {
@@ -58,25 +50,19 @@ export function gradientToCssClasses(tokens: CategorizedTokens['gradient']): str
 }
 
 export function gradientToScssVariables(tokens: CategorizedTokens['gradient']): string {
-    return itemsFrom(tokens, (token) => {
-        return [
-            `$${token.name}${gradientTokenEndings.rotation}: ${token.value.rotation} !default;`,
-            ...token.value.stops.flatMap((step, index) => {
-                return [
-                    `$${token.name}-${index}${gradientTokenEndings.stepPosition}: ${step.position} !default;`,
-                    `$${token.name}-${index}${gradientTokenEndings.stepColor}: ${step.color} !default;`,
-                ];
-            }),
-        ];
-    });
+    return itemsFrom(tokens, (token) => [
+        `$${token.name}${gradientTokenEndings.rotation}: ${token.value.rotation} !default;`,
+        ...token.value.stops.flatMap((step, index) => [
+            `$${token.name}-${index}${gradientTokenEndings.stepPosition}: ${step.position} !default;`,
+            `$${token.name}-${index}${gradientTokenEndings.stepColor}: ${step.color} !default;`,
+        ]),
+    ]);
 }
 
 function linearGradientPropertyReferencingCustomPropertiesFrom(token: TransformedGradientToken): string {
     const rotationValue = `var(--${token.name}${gradientTokenEndings.rotation})`;
 
-    const serializedSteps = token.value.stops.flatMap((_step, index) => {
-        return `var(--${token.name}-${index}${gradientTokenEndings.stepColor}) var(--${token.name}-${index}${gradientTokenEndings.stepPosition})`;
-    });
+    const serializedSteps = token.value.stops.flatMap((_step, index) => `var(--${token.name}-${index}${gradientTokenEndings.stepColor}) var(--${token.name}-${index}${gradientTokenEndings.stepPosition})`);
 
     const content = [rotationValue, ...serializedSteps].join(', ');
 
@@ -84,9 +70,7 @@ function linearGradientPropertyReferencingCustomPropertiesFrom(token: Transforme
 }
 
 function radialGradientPropertyReferencingCustomPropertiesFrom(token: TransformedGradientToken): string {
-    const serializedSteps = token.value.stops.flatMap((_step, index) => {
-        return `var(--${token.name}-${index}${gradientTokenEndings.stepColor}) var(--${token.name}-${index}${gradientTokenEndings.stepPosition})`;
-    });
+    const serializedSteps = token.value.stops.flatMap((_step, index) => `var(--${token.name}-${index}${gradientTokenEndings.stepColor}) var(--${token.name}-${index}${gradientTokenEndings.stepPosition})`);
 
     const content = serializedSteps.join(', ');
 
@@ -95,9 +79,7 @@ function radialGradientPropertyReferencingCustomPropertiesFrom(token: Transforme
 function linearGradientPropertyFrom(token: TransformedGradientToken): string {
     const rotationValue = `$${token.name}${gradientTokenEndings.rotation}`;
 
-    const serializedSteps = token.value.stops.flatMap((_step, index) => {
-        return `$${token.name}-${index}${gradientTokenEndings.stepColor} $${token.name}-${index}${gradientTokenEndings.stepPosition}`;
-    });
+    const serializedSteps = token.value.stops.flatMap((_step, index) => `$${token.name}-${index}${gradientTokenEndings.stepColor} $${token.name}-${index}${gradientTokenEndings.stepPosition}`);
 
     const content = [rotationValue, ...serializedSteps].join(', ');
 
@@ -105,9 +87,7 @@ function linearGradientPropertyFrom(token: TransformedGradientToken): string {
 }
 
 function radialGradientPropertyFrom(token: TransformedGradientToken): string {
-    const serializedSteps = token.value.stops.flatMap((_step, index) => {
-        return `$${token.name}-${index}${gradientTokenEndings.stepColor} $${token.name}-${index}${gradientTokenEndings.stepPosition}`;
-    });
+    const serializedSteps = token.value.stops.flatMap((_step, index) => `$${token.name}-${index}${gradientTokenEndings.stepColor} $${token.name}-${index}${gradientTokenEndings.stepPosition}`);
 
     const content = serializedSteps.join(', ');
 

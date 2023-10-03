@@ -1,4 +1,5 @@
 import {Named, TransformGroup} from 'style-dictionary';
+
 import {tokenTransform} from '../transforms/token';
 
 export const tokenTransformGroup: Named<TransformGroup> = {

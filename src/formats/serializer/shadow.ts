@@ -3,14 +3,12 @@ import {CategorizedTokens} from '../models/categorized-tokens';
 import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function shadowToCustomProperties(tokens: CategorizedTokens['shadow']): string {
-    return itemsFrom(tokens, (token) => {
-        return propertiesFrom([
-            `--${token.name}${shadowTokenEndings.radius}: ${token.value.radius};`,
-            `--${token.name}${shadowTokenEndings.color}: ${token.value.color};`,
-            `--${token.name}${shadowTokenEndings.offsetX}: ${token.value.offsetX};`,
-            `--${token.name}${shadowTokenEndings.offsetY}: ${token.value.offsetY};`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => propertiesFrom([
+        `--${token.name}${shadowTokenEndings.radius}: ${token.value.radius};`,
+        `--${token.name}${shadowTokenEndings.color}: ${token.value.color};`,
+        `--${token.name}${shadowTokenEndings.offsetX}: ${token.value.offsetX};`,
+        `--${token.name}${shadowTokenEndings.offsetY}: ${token.value.offsetY};`,
+    ]));
 }
 
 export function shadowToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['shadow']): string {

@@ -1,4 +1,5 @@
 import {ArrayElement} from '../util/array';
+
 import {tokenTypes} from './token-types';
 
 export interface ColorProperty {

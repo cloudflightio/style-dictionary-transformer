@@ -1,4 +1,5 @@
 import {Format} from 'style-dictionary';
+
 import {borderToScssVariablesReferencingCustomProperties} from './serializer/border';
 import {colorToScssVariablesReferencingCustomProperties} from './serializer/color';
 import {fontToScssVariablesReferencingCustomProperties} from './serializer/font';

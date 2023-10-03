@@ -1,5 +1,7 @@
 import {TransformedToken} from 'style-dictionary';
+
 import {ArrayElement} from '../util/array';
+
 import {tokenTypes} from './token-types';
 
 export interface TransformedColorToken extends TransformedToken {

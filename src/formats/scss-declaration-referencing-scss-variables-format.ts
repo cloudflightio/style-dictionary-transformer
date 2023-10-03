@@ -1,4 +1,5 @@
 import {Format} from 'style-dictionary';
+
 import {borderToScssVariables} from './serializer/border';
 import {colorToScssVariables} from './serializer/color';
 import {fontToScssVariables} from './serializer/font';

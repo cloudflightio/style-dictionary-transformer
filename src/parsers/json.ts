@@ -1,4 +1,5 @@
 import {DesignToken, DesignTokens, Parser} from 'style-dictionary';
+
 import {tokenTypes} from '../models/token-types';
 import {ArrayElement} from '../util/array';
 

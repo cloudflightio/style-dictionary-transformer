@@ -1,4 +1,5 @@
 import {Format} from 'style-dictionary';
+
 import {borderToCssClassesReferencingCustomProperties, borderToCustomProperties} from './serializer/border';
 import {colorToCustomProperties} from './serializer/color';
 import {fontToCssClassesReferencingCustomProperties, fontToCustomProperties} from './serializer/font';

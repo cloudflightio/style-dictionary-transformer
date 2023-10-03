@@ -1,5 +1,6 @@
 import {beforeAll, describe, expect, test} from '@jest/globals';
 import StyleDictionary from 'style-dictionary';
+
 import {cloudflightPlatformConfigWith, registerItems} from '../index';
 import {readFileMinified} from '../test-util/read-file-minified';
 

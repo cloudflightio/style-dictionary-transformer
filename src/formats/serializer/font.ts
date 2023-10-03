@@ -3,37 +3,33 @@ import {CategorizedTokens} from '../models/categorized-tokens';
 import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function fontToCustomProperties(tokens: CategorizedTokens['font']): string {
-    return itemsFrom(tokens, (token) => {
-        return propertiesFrom([
-            `--${token.name}${fontTokenEndings.fontSize}: ${token.value.fontSize};`,
-            `--${token.name}${fontTokenEndings.textDecoration}: ${token.value.textDecoration};`,
-            `--${token.name}${fontTokenEndings.fontFamily}: ${token.value.fontFamily};`,
-            `--${token.name}${fontTokenEndings.fontWeight}: ${token.value.fontWeight};`,
-            `--${token.name}${fontTokenEndings.fontStyle}: ${token.value.fontStyle};`,
-            `--${token.name}${fontTokenEndings.fontStretch}: ${token.value.fontStretch};`,
-            `--${token.name}${fontTokenEndings.letterSpacing}: ${token.value.letterSpacing};`,
-            `--${token.name}${fontTokenEndings.lineHeight}: ${token.value.lineHeight};`,
-            `--${token.name}${fontTokenEndings.paragraphIndent}: ${token.value.paragraphIndent};`,
-            `--${token.name}${fontTokenEndings.textCase}: ${token.value.textCase};`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => propertiesFrom([
+        `--${token.name}${fontTokenEndings.fontSize}: ${token.value.fontSize};`,
+        `--${token.name}${fontTokenEndings.textDecoration}: ${token.value.textDecoration};`,
+        `--${token.name}${fontTokenEndings.fontFamily}: ${token.value.fontFamily};`,
+        `--${token.name}${fontTokenEndings.fontWeight}: ${token.value.fontWeight};`,
+        `--${token.name}${fontTokenEndings.fontStyle}: ${token.value.fontStyle};`,
+        `--${token.name}${fontTokenEndings.fontStretch}: ${token.value.fontStretch};`,
+        `--${token.name}${fontTokenEndings.letterSpacing}: ${token.value.letterSpacing};`,
+        `--${token.name}${fontTokenEndings.lineHeight}: ${token.value.lineHeight};`,
+        `--${token.name}${fontTokenEndings.paragraphIndent}: ${token.value.paragraphIndent};`,
+        `--${token.name}${fontTokenEndings.textCase}: ${token.value.textCase};`,
+    ]));
 }
 
 export function fontToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['font']): string {
-    return itemsFrom(tokens, (token) => {
-        return classFrom(token.name, [
-            `font-family: var(--${token.name}${fontTokenEndings.fontFamily});`,
-            `font-size: var(--${token.name}${fontTokenEndings.fontSize});`,
-            `font-stretch: var(--${token.name}${fontTokenEndings.fontStretch});`,
-            `font-style: var(--${token.name}${fontTokenEndings.fontStyle});`,
-            `font-weight: var(--${token.name}${fontTokenEndings.fontWeight});`,
-            `letter-spacing: var(--${token.name}${fontTokenEndings.letterSpacing});`,
-            `line-height: var(--${token.name}${fontTokenEndings.lineHeight});`,
-            `text-indent: var(--${token.name}${fontTokenEndings.paragraphIndent});`,
-            `text-transform: var(--${token.name}${fontTokenEndings.textCase});`,
-            `text-decoration: var(--${token.name}${fontTokenEndings.textDecoration});`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => classFrom(token.name, [
+        `font-family: var(--${token.name}${fontTokenEndings.fontFamily});`,
+        `font-size: var(--${token.name}${fontTokenEndings.fontSize});`,
+        `font-stretch: var(--${token.name}${fontTokenEndings.fontStretch});`,
+        `font-style: var(--${token.name}${fontTokenEndings.fontStyle});`,
+        `font-weight: var(--${token.name}${fontTokenEndings.fontWeight});`,
+        `letter-spacing: var(--${token.name}${fontTokenEndings.letterSpacing});`,
+        `line-height: var(--${token.name}${fontTokenEndings.lineHeight});`,
+        `text-indent: var(--${token.name}${fontTokenEndings.paragraphIndent});`,
+        `text-transform: var(--${token.name}${fontTokenEndings.textCase});`,
+        `text-decoration: var(--${token.name}${fontTokenEndings.textDecoration});`,
+    ]));
 }
 
 export function fontToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['font']): string {
@@ -52,20 +48,18 @@ export function fontToScssVariablesReferencingCustomProperties(tokens: Categoriz
 }
 
 export function fontToCssClasses(tokens: CategorizedTokens['font']): string {
-    return itemsFrom(tokens, (token) => {
-        return classFrom(token.name, [
-            `font-family: $${token.name}${fontTokenEndings.fontFamily};`,
-            `font-size: $${token.name}${fontTokenEndings.fontSize};`,
-            `font-stretch: $${token.name}${fontTokenEndings.fontStretch};`,
-            `font-style: $${token.name}${fontTokenEndings.fontStyle};`,
-            `font-weight: $${token.name}${fontTokenEndings.fontWeight};`,
-            `letter-spacing: $${token.name}${fontTokenEndings.letterSpacing};`,
-            `line-height: $${token.name}${fontTokenEndings.lineHeight};`,
-            `text-indent: $${token.name}${fontTokenEndings.paragraphIndent};`,
-            `text-transform: $${token.name}${fontTokenEndings.textCase};`,
-            `text-decoration: $${token.name}${fontTokenEndings.textDecoration};`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => classFrom(token.name, [
+        `font-family: $${token.name}${fontTokenEndings.fontFamily};`,
+        `font-size: $${token.name}${fontTokenEndings.fontSize};`,
+        `font-stretch: $${token.name}${fontTokenEndings.fontStretch};`,
+        `font-style: $${token.name}${fontTokenEndings.fontStyle};`,
+        `font-weight: $${token.name}${fontTokenEndings.fontWeight};`,
+        `letter-spacing: $${token.name}${fontTokenEndings.letterSpacing};`,
+        `line-height: $${token.name}${fontTokenEndings.lineHeight};`,
+        `text-indent: $${token.name}${fontTokenEndings.paragraphIndent};`,
+        `text-transform: $${token.name}${fontTokenEndings.textCase};`,
+        `text-decoration: $${token.name}${fontTokenEndings.textDecoration};`,
+    ]));
 }
 
 export function fontToScssVariables(tokens: CategorizedTokens['font']): string {

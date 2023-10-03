@@ -1,5 +1,6 @@
+import {userEvent, within} from '@storybook/testing-library';
 import type {Meta, StoryObj} from '@storybook/vue3';
-import {within, userEvent} from '@storybook/testing-library';
+
 import MyPage from './Page.vue';
 
 const meta = {
@@ -28,6 +29,7 @@ export const LoggedIn: Story = {
         const loginButton = await canvas.getByRole('button', {
             name: /Log in/i,
         });
+
         // eslint-disable-next-line @typescript-eslint/await-thenable
         await userEvent.click(loginButton);
     },

@@ -1,4 +1,5 @@
 import {Dictionary} from 'style-dictionary';
+
 import {isExtendedTransformedToken} from '../../models/transformed-token';
 import {CategorizedTokens} from '../models/categorized-tokens';
 

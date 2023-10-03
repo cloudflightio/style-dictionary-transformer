@@ -4,21 +4,17 @@ import {CategorizedTokens} from '../models/categorized-tokens';
 import {classFrom, itemsFrom, propertiesFrom} from '../util/serializer';
 
 export function transitionToCustomProperties(tokens: CategorizedTokens['transition']): string {
-    return itemsFrom(tokens, (token) => {
-        return propertiesFrom([
-            `--${token.name}${transitionTokenEndings.duration}: ${token.value.duration};`,
-            `--${token.name}${transitionTokenEndings.timingFunction}: ${timingFunctionFrom(token)};`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => propertiesFrom([
+        `--${token.name}${transitionTokenEndings.duration}: ${token.value.duration};`,
+        `--${token.name}${transitionTokenEndings.timingFunction}: ${timingFunctionFrom(token)};`,
+    ]));
 }
 
 export function transitionToCssClassesReferencingCustomProperties(tokens: CategorizedTokens['transition']): string {
-    return itemsFrom(tokens, (token) => {
-        return classFrom(token.name, [
-            `transition-duration: var(--${token.name}${transitionTokenEndings.duration});`,
-            `transition-timing-function: var(--${token.name}${transitionTokenEndings.timingFunction});`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => classFrom(token.name, [
+        `transition-duration: var(--${token.name}${transitionTokenEndings.duration});`,
+        `transition-timing-function: var(--${token.name}${transitionTokenEndings.timingFunction});`,
+    ]));
 }
 
 export function transitionToScssVariablesReferencingCustomProperties(tokens: CategorizedTokens['transition']): string {
@@ -29,12 +25,10 @@ export function transitionToScssVariablesReferencingCustomProperties(tokens: Cat
 }
 
 export function transitionToCssClasses(tokens: CategorizedTokens['transition']): string {
-    return itemsFrom(tokens, (token) => {
-        return classFrom(token.name, [
-            `transition-duration: $${token.name}${transitionTokenEndings.duration};`,
-            `transition-timing-function: $${token.name}${transitionTokenEndings.timingFunction};`,
-        ]);
-    });
+    return itemsFrom(tokens, (token) => classFrom(token.name, [
+        `transition-duration: $${token.name}${transitionTokenEndings.duration};`,
+        `transition-timing-function: $${token.name}${transitionTokenEndings.timingFunction};`,
+    ]));
 }
 
 export function transitionToScssVariables(tokens: CategorizedTokens['transition']): string {

@@ -41,7 +41,7 @@
         "@storybook/addon-links": "7.6.4",
         "@storybook/blocks": "7.6.4",
         "@storybook/testing-library": "0.2.2",
-        "@storybook/vue3": "7.6.4",
+        "@storybook/vue3": "7.6.7",
         "@storybook/vue3-vite": "7.6.4",
         "@types/node": "20.10.4",
         "@types/tinycolor2": "^1.4.6",

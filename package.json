@@ -52,7 +52,7 @@
         "lint-staged": "15.2.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "sass": "1.69.5",
+        "sass": "1.69.6",
         "storybook": "7.6.4",
         "style-dictionary": "3.9.1",
         "ts-jest": "29.1.1",
